@@ -1,2 +1,0 @@
-(self.webpackChunkguy_livni_site=self.webpackChunkguy_livni_site||[]).push([[306],{1930:function(e,t,n){"use strict";var u=n(5318);t.__esModule=!0,t.default=void 0;var l=u(n(5354)),i=u(n(7294)),r=function(e){function t(){return e.apply(this,arguments)||this}return(0,l.default)(t,e),t.prototype.render=function(){return i.default.createElement(i.default.Fragment,null)},t}(i.default.Component);t.default=r}}]);
-//# sourceMappingURL=component---cache-caches-gatsby-plugin-offline-app-shell-js-3d01b3844f0fa2d7f2a7.js.map
