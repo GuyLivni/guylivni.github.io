@@ -51,10 +51,6 @@ function Header({ location, onModeSwitch, isDark, author, navigation }) {
   return (
     <Container>
       <Logo title={author} />
-      <NavContainer>
-        <Menu location={location} routes={navigation.routes} />
-        <DarkModeToggle onModeSwitch={onModeSwitch} isDark={isDark} />
-      </NavContainer>
     </Container>
   );
 }
