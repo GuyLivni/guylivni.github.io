@@ -26,8 +26,13 @@ const SubTitle = styled('h2')`
   ${subTitleStyles}
 `;
 
-const Text = styled('p')`
+const textStyles = ({ theme }) => css`
+  color: ${theme.colors.textColor};
   text-align: center;
+`;
+
+const Text = styled('p')`
+  ${textStyles}
 `;
 
 function ShortText({ title, subTitle, content }) {

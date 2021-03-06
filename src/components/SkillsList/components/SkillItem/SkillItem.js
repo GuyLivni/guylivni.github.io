@@ -30,13 +30,21 @@ const SkillTitle = styled('h4')`
   ${skillTitleStyles}
 `;
 
+const skillStyles = ({ theme }) => css`
+  color: ${theme.colors.textColor};
+`;
+
+const Skill = styled('li')`
+  ${skillStyles}
+`;
+
 function SkillItem({ title, description }) {
   return (
     <Container>
       <SkillTitle>{title}</SkillTitle>
       <ul>
         {description.map((item, index) => (
-          <li key={index}>{item}</li>
+          <Skill key={index}>{item}</Skill>
         ))}
       </ul>
     </Container>
