@@ -22,17 +22,17 @@ const containerStyles = ({ theme }) => css`
     background ${theme.transitions.default};
   min-height: 10vh;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     padding: 40px 100px 0 100px;
-  `};
+  }
 
-  ${theme.mq.large`
+  @media ${theme.device.desktop} {
     padding: 40px 200px 0 200px;
-  `};
+  }
 
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     padding: 40px 300px 0 300px;
-  `};
+  }
 `;
 
 const Container = styled('header')`

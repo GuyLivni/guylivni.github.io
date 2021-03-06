@@ -10,14 +10,22 @@ const containerStyles = ({ theme }) => css`
   align-items: flex-start;
   justify-content: flex-start;
   padding: 10px 0;
+  transform: rotate(0deg) scale(1) translateX(0) translateZ(0px)
+    perspective(100px);
+  transition: all 0.3s ease;
+  cursor: default;
 
-  ${theme.mq.medium` 
-     padding: 0;
-  `};
+  @media ${theme.device.desktop} {
+    padding: 0;
+    :hover {
+      transform: rotate(-0.5deg) scale(1.1) translateX(25px) translateY(-15px)
+        translateZ(5px) perspective(100px);
+    }
+  }
 
-  ${theme.mq.huge`
-     width: 80%; 
-  `};
+  @media ${theme.device.wideDesktop} {
+    width: 80%;
+  }
 `;
 
 const Container = styled('div')`
@@ -31,13 +39,13 @@ const preStyles = ({ theme }) => css`
   font-size: 40px;
   animation: ${animations.fadeInUp} 0.6s 0.2s ease-out both;
 
-  ${theme.mq.medium`
-     font-size: 50px;
-  `};
+  @media ${theme.device.tablet} {
+    font-size: 50px;
+  }
 
-  ${theme.mq.huge`
-     font-size: 60px;
-  `};
+  @media ${theme.device.wideDesktop} {
+    font-size: 60px;
+  }
 `;
 
 const PreTitle = styled('span')`
@@ -59,14 +67,14 @@ const titleStyles = ({ theme }) => css`
   margin: 0 0 15px 0;
   animation: ${animations.fadeInUp} 0.6s 0.3s ease-out both;
 
-  ${theme.mq.medium`
-     font-size: 50px;
-     margin: 0 0 30px 0;
-  `};
+  @media ${theme.device.tablet} {
+    font-size: 50px;
+    margin: 0 0 30px 0;
+  }
 
-  ${theme.mq.huge`
-     font-size: 60px;
-  `};
+  @media ${theme.device.wideDesktop} {
+    font-size: 60px;
+  }
 `;
 
 const Title = styled('h1')`

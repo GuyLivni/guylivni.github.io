@@ -17,10 +17,10 @@ const navStyles = ({ theme }) => css`
   height: 100%;
   margin-right: 20px;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     margin-right: 50px;
     animation: ${fadeInDown} 0.6s 0.2s ease both;
-`};
+  }
 `;
 
 const Nav = styled('nav')`
@@ -62,10 +62,10 @@ const linkStyles = ({ theme }) => css`
     color: ${theme.colors.p600};
   }
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     font-size: 16px;
     height: 100%;
-  `};
+  }
 `;
 
 const Link = styled(GatsbyLink)`
@@ -75,10 +75,10 @@ const Link = styled(GatsbyLink)`
 const navLinkStyles = ({ theme }) => css`
   display: none;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     display: flex;
     flex-direction: row;
-  `};
+  }
 `;
 
 const NavLinks = styled('div')`

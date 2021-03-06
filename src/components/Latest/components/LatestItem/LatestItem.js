@@ -9,12 +9,12 @@ const containerStyles = ({ theme }) => css`
   margin-bottom: 20px;
   width: 100%;
 
-  ${theme.mq.medium`
-     justify-content: flex-start;
-     margin: 0 25px;
-     width: initial;
-     min-width: 250px;
-  `};
+  @media ${theme.device.tablet} {
+    justify-content: flex-start;
+    margin: 0 25px;
+    width: initial;
+    min-width: 250px;
+  }
 `;
 
 const Container = styled('div')`

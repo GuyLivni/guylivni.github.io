@@ -9,9 +9,9 @@ const containerStyles = ({ theme }) => css`
     margin-top: 0;
   }
 
-  ${theme.mq.large`
-     margin: 0 80px 0 0 ;
-  `};
+  @media ${theme.device.desktop} {
+    margin: 0 80px 0 0;
+  }
 `;
 
 const Container = styled('div')`

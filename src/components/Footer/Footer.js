@@ -22,10 +22,10 @@ const containerStyles = ({ theme }) => css`
     z-index: -1;
   }
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     padding-left: 100px;
     margin-bottom: 0;
-  `};
+  }
 `;
 
 const Container = styled('div')`
@@ -45,10 +45,10 @@ const contentStyles = ({ theme }) => css`
   min-height: 200px;
   padding: 20px;
 
-  ${theme.mq.medium`
-     align-items: flex-start;
-     margin: 0;
-  `};
+  @media ${theme.device.tablet} {
+    align-items: flex-start;
+    margin: 0;
+  }
 `;
 
 const Content = styled('div')`
@@ -64,12 +64,12 @@ const footerInnerStyles = ({ theme }) => css`
   position: relative;
   z-index: 1;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     flex-direction: row;
     justify-content: space-between;
     padding-right: 70px;
     height: 100px;
-  `};
+  }
 `;
 
 const FooterInner = styled('div')`
@@ -84,9 +84,9 @@ const copyrightsStyles = ({ theme }) => css`
   margin: 10px 0 0 0;
   opacity: 0.7;
 
-  ${theme.mq.medium`
-      margin: 0;
-    `};
+  @media ${theme.device.tablet} {
+    margin: 0;
+  }
 `;
 
 const CopyRights = styled('p')`

@@ -15,9 +15,9 @@ const moonStyles = ({ theme }) => css`
   padding: 0px 0 0px 3px;
   ${baseStyles}
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     padding: 1px 0 0px 2px;
-  `};
+  }
 `;
 
 const StyledMoon = styled('span')`
@@ -29,9 +29,9 @@ const sunStyles = ({ theme }) => css`
   padding: 0;
   ${baseStyles}
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     padding: 1px 0px 0px 1px;
-  `};
+  }
 `;
 
 const StyledSun = styled('span')`

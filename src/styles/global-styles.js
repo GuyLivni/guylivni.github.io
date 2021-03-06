@@ -1,14 +1,14 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const globalStyles = ({ theme }) => css`
-  html {
+  html,
+  body {
     background-color: ${theme.colors.bodyBackground};
-    transition: background ${theme.transitions.default};
   }
 
   body {
-    color: ${theme.colors.textColor};
-    transition: color ${theme.transitions.default};
+    transition: color ${theme.transitions.default},
+      background ${theme.transitions.default};
   }
 
   *,

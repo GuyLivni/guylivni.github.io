@@ -20,9 +20,9 @@ const containerStyles = ({ theme }) => css`
   flex-shrink: 0;
   transition: all ${theme.transitions.default};
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     display: none;
-  `};
+  }
 `;
 
 const Container = styled('div')`

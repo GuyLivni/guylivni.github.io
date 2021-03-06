@@ -1,4 +1,4 @@
-import { media } from '../style-helpers';
+import { deviceMq } from '../style-helpers';
 
 const white = '#FFFFFF';
 const black = '#0F131A';
@@ -80,4 +80,4 @@ export const colors = {
   ...whites,
 };
 
-export const mq = media;
+export const device = deviceMq;

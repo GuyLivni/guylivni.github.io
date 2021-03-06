@@ -26,9 +26,9 @@ const buttonStyles = ({ theme }) => css`
     outline: none;
   }
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     display: none;
-  `};
+  }
 `;
 
 const Button = styled('button')`

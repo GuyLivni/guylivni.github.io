@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components';
 import SkillItem from './components/SkillItem';
 
 const containerStyles = ({ theme }) => css`
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     display: flex;
-  `};
+  }
 `;
 
 const Container = styled('div')`
@@ -14,10 +14,10 @@ const Container = styled('div')`
 `;
 
 const titleContainerStyles = ({ theme }) => css`
-  ${theme.mq.huge`
-     width: 30%;
-     margin-right: 10%;
-  `};
+  @media ${theme.device.wideDesktop} {
+    width: 30%;
+    margin-right: 10%;
+  }
 `;
 
 const TitleContainer = styled('div')`
@@ -28,9 +28,9 @@ const titleStyles = ({ theme }) => css`
   margin-top: 0;
   color: ${theme.colors.p400};
 
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     font-size: 2rem;
-  `};
+  }
 `;
 
 const Title = styled('h2')`
@@ -42,13 +42,13 @@ const contentContainerStyles = ({ theme }) => css`
   flex-direction: column;
   margin-top: 10px;
 
-  ${theme.mq.large`
+  @media ${theme.device.desktop} {
     flex-direction: row;
-  `};
+  }
 
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     width: 60%;
-  `};
+  }
 `;
 
 const ContentContainer = styled('div')`

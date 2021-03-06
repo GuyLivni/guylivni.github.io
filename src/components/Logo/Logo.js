@@ -59,9 +59,9 @@ const titleStyles = ({ theme }) => css`
   transition: transform ${theme.transitions.default};
   font-family: Montserrat, sans-serif;
 
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     font-size: 24px;
-  `};
+  }
 
   ${Container}:hover & {
     animation-duration: 0.5s;

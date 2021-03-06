@@ -67,10 +67,10 @@ const titleStyles = ({ theme }) => css`
     top: -4px;
     margin-left: 8px;
 
-    ${theme.mq.medium`
-       margin-left: 12px;
-       width: 26px;
-    `};
+    @media ${theme.device.tablet} {
+      margin-left: 12px;
+      width: 26px;
+    }
   }
 `;
 

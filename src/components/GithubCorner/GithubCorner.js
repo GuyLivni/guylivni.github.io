@@ -19,9 +19,9 @@ const octocatWave = keyframes`
 const hrefStyles = ({ theme }) => css`
   display: none;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     display: block;
-  `};
+  }
 `;
 
 const Href = styled('a')`

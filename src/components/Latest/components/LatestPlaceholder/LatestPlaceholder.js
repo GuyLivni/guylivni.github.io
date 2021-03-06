@@ -27,10 +27,10 @@ const containerStyles = ({ theme }) => css`
   margin: 0 25px;
   width: 100%;
 
-  ${theme.mq.medium`
-     width: initial;
-     min-width: 250px;
-  `};
+  @media ${theme.device.tablet} {
+    width: initial;
+    min-width: 250px;
+  }
 `;
 
 const Container = styled('div')`

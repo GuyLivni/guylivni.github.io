@@ -19,9 +19,9 @@ const navStyles = ({ isDisplayed, theme }) => css`
   transform: ${isDisplayed ? 'translateX(0)' : 'translateX(-110%)'};
   transition: transform 0.3s ease-out;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     display: none;
-  `};
+  }
 `;
 
 const Nav = styled('div')`
@@ -37,9 +37,9 @@ const backdropStyles = ({ theme }) => css`
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     display: none;
-  `};
+  }
 `;
 
 const Backdrop = styled('div')`

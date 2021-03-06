@@ -6,16 +6,16 @@ import styled, { css } from 'styled-components';
 const containerStyles = ({ theme }) => css`
   flex-direction: column;
 
-  ${theme.mq.medium`
+  @media ${theme.device.tablet} {
     margin-top: 50px;
     display: flex;
-  `};
+  }
 
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     margin-top: 100px;
     display: flex;
     flex-direction: row;
-  `};
+  }
 `;
 
 const Container = styled('div')`
@@ -23,10 +23,10 @@ const Container = styled('div')`
 `;
 
 const titleContainerStyles = ({ theme }) => css`
-  ${theme.mq.huge`
-     width: 30%;
-     margin-right: 10%;
-  `};
+  @media ${theme.device.wideDesktop} {
+    width: 30%;
+    margin-right: 10%;
+  }
 `;
 
 const TitleContainer = styled('div')`
@@ -37,9 +37,9 @@ const titleStyles = ({ theme }) => css`
   margin-top: 0;
   color: ${theme.colors.p400};
 
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     font-size: 2rem;
-  `};
+  }
 `;
 
 const Title = styled('h2')`
@@ -47,9 +47,9 @@ const Title = styled('h2')`
 `;
 
 const contentContainerStyles = ({ theme }) => css`
-  ${theme.mq.huge`
+  @media ${theme.device.wideDesktop} {
     width: 60%;
-  `};
+  }
 `;
 
 const ContentContainer = styled('div')`
@@ -61,9 +61,10 @@ const imageStyles = ({ theme }) => css`
   top: 0;
   margin-bottom: 20px;
   max-height: 160px;
-  ${theme.mq.huge`
-     max-height: 300px;
-  `};
+
+  @media ${theme.device.wideDesktop} {
+    max-height: 300px;
+  }
 `;
 
 const Image = styled(GatsbyImage)`
@@ -72,9 +73,10 @@ const Image = styled(GatsbyImage)`
 
 const textStyles = ({ theme }) => css`
   color: ${theme.colors.textColor};
-  ${theme.mq.huge`
-     width: 80%;
-  `};
+
+  @media ${theme.device.wideDesktop} {
+    width: 80%;
+  }
 `;
 
 const Text = styled('p')`
