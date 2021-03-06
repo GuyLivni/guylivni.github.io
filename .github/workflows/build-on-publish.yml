@@ -1,0 +1,44 @@
+name: Build on Contentful Publish Event
+on:
+	  repository_dispatch:
+    types: [publish-event]
+
+jobs:
+  build:
+    name: Build, lint, and deploy to github-pages on Node ${{ matrix.node }} and ${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: ['12.16.0']
+        os: [ubuntu-latest]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install deps and build (with cache) 🧙‍♂️
+        uses: bahmutov/npm-install@v1
+
+      - name: Lint 📃
+        run: npm run lint
+
+      - name: Build 🔧
+        run: npm run build
+        env:
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_DELIVERY_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_DELIVERY_ACCESS_TOKEN }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: docs
+          folder: public
