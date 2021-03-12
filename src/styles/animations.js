@@ -36,6 +36,12 @@ export const fadeInFromRight = keyframes`
     }
 `;
 
+export const fadeOut = keyframes`
+    0% { opacity:1; }
+    66% { opacity:1; }
+    100% { opacity:0; }
+`;
+
 export const underlineEffect = ({ theme }) => css`
   :before {
     content: '';

@@ -6,9 +6,10 @@ import Helmet from 'react-helmet';
 import Footer from '../Footer';
 import Latest from '../Latest';
 import Header from '../Header';
+import Toast from '../Toast';
 import GithubCorner from '../GithubCorner';
 import { GlobalStyles, themes } from '../../styles';
-import { useDarkMode, useSiteData } from '../../hooks';
+import { useDarkMode, useSiteData, useToastsData } from '../../hooks';
 
 const contentStyles = ({ theme, location }) => css`
   display: flex;
@@ -49,6 +50,7 @@ const Content = styled('main')`
 function Layout({ children, location }) {
   const [isDark, setDark] = useDarkMode();
   const { metadata, footer, header } = useSiteData();
+  const { toasts } = useToastsData();
   const { repoUrl, author } = metadata;
   const { darkTheme, mainTheme } = themes;
 
@@ -67,6 +69,7 @@ function Layout({ children, location }) {
         />
         <GlobalStyles />
         <GithubCorner url={repoUrl} />
+        <Toast location={location} toasts={toasts} />
         <Header
           location={location}
           onModeSwitch={(checked) => setDark(checked)}
