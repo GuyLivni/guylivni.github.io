@@ -10,8 +10,9 @@ function useFetch(action, initialData) {
   useEffect(() => {
     async function fetchUrl() {
       try {
-        const { data } = await axios(action);
-        setData(data);
+        if (data) return Promise.resolve();
+        const fetchResult = await axios(action);
+        setData(fetchResult.data);
       } catch (error) {
         setError(error.message || general.FETCH_ERROR);
       } finally {
@@ -20,7 +21,7 @@ function useFetch(action, initialData) {
     }
 
     fetchUrl();
-  }, [action]);
+  }, [action, data]);
 
   return [data, loading, error];
 }
