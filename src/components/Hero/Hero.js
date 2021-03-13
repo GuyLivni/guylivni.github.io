@@ -24,7 +24,11 @@ const containerStyles = ({ theme }) => css`
   }
 
   @media ${theme.device.wideDesktop} {
-    width: 80%;
+    max-width: 90%;
+  }
+
+  @media ${theme.device.extraWideDesktop} {
+    max-width: 80%;
   }
 `;
 

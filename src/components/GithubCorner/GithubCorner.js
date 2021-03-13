@@ -18,6 +18,8 @@ const octocatWave = keyframes`
 
 const hrefStyles = ({ theme }) => css`
   display: none;
+  z-index: 10000;
+  position: fixed;
 
   @media ${theme.device.tablet} {
     display: block;

@@ -35,7 +35,7 @@ const globalStyles = ({ theme }) => css`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${theme.colors.p600};
+    background-color: ${theme.colors.p300};
   }
 `;
 

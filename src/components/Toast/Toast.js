@@ -18,14 +18,26 @@ const getGreetingByTime = (toasts) => {
 
 const containerStyles = ({ theme }) => css`
   display: block;
-  position: fixed;
-  z-index: 9;
-  top: 420px;
-  right: 200px;
+  position: absolute;
+  z-index: 10;
+  margin: 0 auto;
+  bottom: 30px;
   pointer-events: none;
   padding: 0;
   animation: ${fadeInUp} 1s 0.2s ease both,
     ${fadeOut} 3s 1s ease normal forwards 1;
+
+  @media ${theme.device.tablet} {
+    right: 100px;
+  }
+
+  @media ${theme.device.desktop} {
+    right: 150px;
+  }
+
+  @media ${theme.device.extraWideDesktop} {
+    right: 250px;
+  }
 `;
 
 const Container = styled('div')`
@@ -66,9 +78,7 @@ const Img = styled(CoffeeCup)`
   ${imgStyles}
 `;
 
-function Toast({ location, toasts }) {
-  if (location.pathname !== '/') return null;
-
+function Toast({ toasts }) {
   return (
     <Container>
       <Img alt="greeting" />
@@ -78,7 +88,6 @@ function Toast({ location, toasts }) {
 }
 
 Toast.propTypes = {
-  location: PropTypes.object.isRequired,
   toasts: PropTypes.object.isRequired,
 };
 
