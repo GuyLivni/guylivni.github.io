@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import {
   FaHome,
   FaUserCircle,
@@ -39,7 +40,9 @@ function Menu({ location, routes }) {
 
   return (
     <Nav>
-      <MobileMenu location={location} routes={routesWithIcons} />
+      <TransitionPortal>
+        <MobileMenu location={location} routes={routesWithIcons} />
+      </TransitionPortal>
       <NavLinks>
         {routes.map(({ path, label }) => (
           <Link
