@@ -1,39 +1,6 @@
 import React, { Fragment } from 'react';
-import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-
-const titleStyles = ({ theme }) => css`
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 3.5rem;
-  color: ${theme.colors.p600};
-  text-align: center;
-`;
-
-const Title = styled('h1')`
-  ${titleStyles}
-`;
-
-const subTitleStyles = ({ theme }) => css`
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: ${theme.colors.p600};
-  text-align: center;
-`;
-
-const SubTitle = styled('h2')`
-  ${subTitleStyles}
-`;
-
-const textStyles = ({ theme }) => css`
-  color: ${theme.colors.textColor};
-  text-align: center;
-`;
-
-const Text = styled('p')`
-  ${textStyles}
-`;
+import { Title, SubTitle, Text } from './ShortText.styled';
 
 function ShortText({ title, subTitle, content }) {
   return (

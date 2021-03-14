@@ -1,24 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
 import Switch from 'react-switch';
 import PropTypes from 'prop-types';
 import { Moon, Sun } from './Icons';
-import { fadeInDown } from '../../styles/animations';
 import DarkModeWebToggle from './DarkModeWebToggle';
-
-const labelStyles = ({ theme }) => css`
-  display: flex;
-  align-items: center;
-  animation: ${fadeInDown} 0.6s 0.2s ease both;
-
-  @media ${theme.device.tablet} {
-    display: none;
-  }
-`;
-
-const Label = styled('label')`
-  ${labelStyles}
-`;
+import { Label } from './DarkModeToggle.styled';
 
 function DarkModeToggle({ onModeSwitch, isDark, theme }) {
   return (
