@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link as GatsbyLink } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { underlineEffect } from '../../../styles/animations';
 
 const containerStyles = ({ theme }) => css`
@@ -56,7 +56,9 @@ const linkStyles = ({ theme }) => css`
   }
 `;
 
-export const Link = styled(GatsbyLink)`
+export const Link = styled(AniLink).attrs(({ theme }) => ({
+  color: theme.colors.p700,
+}))`
   ${linkStyles}${selectedLinkStyles}
 `;
 

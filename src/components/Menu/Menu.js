@@ -6,7 +6,7 @@ import {
   FaFeatherAlt,
   FaEnvelope,
 } from 'react-icons/fa/';
-import MobileMenuBottom from './MobileMenuBottom';
+import MobileMenu from './MobileMenu';
 import { Nav, NavLinks, Link } from './Menu.styled';
 
 const ICON_MAP = {
@@ -25,20 +25,30 @@ const mapRoutesWithIcons = (routes) =>
     };
   });
 
+const transitionDirections = ['top', 'right', 'left', 'bottom'];
+const getRandomTransitionDirection = () =>
+  transitionDirections[Math.floor(Math.random() * transitionDirections.length)];
+
 function Menu({ location, routes }) {
-  const [isMobileMenuOpen, setIsOpen] = useState(false);
+  const [transitionDirection, setTransitionDirection] = useState(
+    getRandomTransitionDirection()
+  );
   const routesWithIcons = mapRoutesWithIcons(routes);
+  const getTransitionDirection = () =>
+    setTransitionDirection(getRandomTransitionDirection());
 
   return (
     <Nav>
-      <MobileMenuBottom location={location} routes={routesWithIcons} />
+      <MobileMenu location={location} routes={routesWithIcons} />
       <NavLinks>
         {routes.map(({ path, label }) => (
           <Link
+            cover
+            direction={transitionDirection}
             key={path}
             pathname={location.pathname}
             to={path}
-            onClick={() => isMobileMenuOpen && setIsOpen(false)}
+            onClick={getTransitionDirection}
           >
             {label}
           </Link>

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link as GatsbyLink } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { underlineEffect, fadeInDown } from '../../styles/animations';
 
 const navStyles = ({ theme }) => css`
@@ -34,7 +34,7 @@ const linkStyles = ({ theme }) => css`
   display: flex;
   align-items: center;
   color: ${theme.colors.p400};
-  margin: 0px 1rem;
+  margin: 0px 10px;
   text-decoration: none;
   outline-width: 0;
   letter-spacing: 0.075em;
@@ -46,7 +46,7 @@ const linkStyles = ({ theme }) => css`
   ${underlineEffect};
   :before {
     bottom: -2px;
-    height: 2px;
+    height: 1.4px;
   }
 
   :hover {
@@ -59,7 +59,9 @@ const linkStyles = ({ theme }) => css`
   }
 `;
 
-export const Link = styled(GatsbyLink)`
+export const Link = styled(AniLink).attrs(({ theme }) => ({
+  bg: theme.colors.p700,
+}))`
   ${linkStyles} ${selectedLinkStyles}
 `;
 
