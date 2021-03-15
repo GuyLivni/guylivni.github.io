@@ -10,7 +10,6 @@ const contentStyles = ({ theme, location }) => css`
   flex-grow: 1;
   transition: color ${theme.transitions.default},
     background ${theme.transitions.default};
-  min-height: 59vh;
   padding: 25px 30px 80px 30px;
 
   @media ${theme.device.tablet} {

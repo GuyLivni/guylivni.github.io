@@ -1,6 +1,17 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const globalStyles = ({ theme }) => css`
+  @media ${theme.device.mobile} {
+    html,
+    body,
+    .tl-edges,
+    .tl-wrapper,
+    #gatsby-focus-wrapper,
+    #___gatsby {
+      height: 100%;
+    }
+  }
+
   html,
   body {
     background-color: ${theme.colors.bodyBackground};
@@ -9,6 +20,11 @@ const globalStyles = ({ theme }) => css`
   body {
     transition: color ${theme.transitions.default},
       background ${theme.transitions.default};
+  }
+
+  .tl-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   *,

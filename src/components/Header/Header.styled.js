@@ -6,7 +6,7 @@ const containerStyles = ({ theme }) => css`
   align-items: center;
   align-content: center;
   width: 100%;
-  padding: 50px 25px 25px 25px;
+  padding: 25px 25px 0 25px;
   top: 0;
   right: 0;
   left: 0;
