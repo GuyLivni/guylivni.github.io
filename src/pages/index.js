@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 import Hero from '../components/Hero';
 import SEO from '../components/Seo';
 import Sections from '../components/Sections';
-import Toast from '../components/Toast';
 
-import { useSiteData, useToastsData } from '../hooks';
+import { useSiteData } from '../hooks';
 
 const components = {
   ContentfulHero: Hero,
@@ -17,12 +16,10 @@ const IndexPage = ({ location, data }) => {
   const { contentfulPage } = data;
   const { metadata: pageMetadata, sections } = contentfulPage;
   const { metadata: siteMetadata } = useSiteData();
-  const { toasts } = useToastsData();
 
   return (
     <Fragment>
       <SEO title={pageMetadata.title} keywords={[pageMetadata.keywords]} />
-      <Toast toasts={toasts} />
       <Sections
         sections={sections}
         components={components}

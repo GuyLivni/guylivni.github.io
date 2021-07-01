@@ -38,12 +38,12 @@ const contentStyles = ({ theme }) => css`
   transition: all ${theme.transitions.default};
   width: 100%;
   border-top: 1px solid ${theme.colors.n100};
-  min-height: 200px;
   padding: 20px;
 
   @media ${theme.device.tablet} {
     align-items: flex-start;
     margin: 0;
+    min-height: 140px;
   }
 `;
 
@@ -52,7 +52,7 @@ export const Content = styled('div')`
 `;
 
 const footerInnerStyles = ({ theme }) => css`
-  height: 80px;
+  min-height: 80px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -64,7 +64,7 @@ const footerInnerStyles = ({ theme }) => css`
     flex-direction: row;
     justify-content: space-between;
     padding-right: 70px;
-    height: 100px;
+    min-height: 100px;
   }
 `;
 
