@@ -4,9 +4,9 @@ import { useFetch } from '../../hooks';
 import { general } from '../../constants';
 
 function Fetcher({ action, loader, children }) {
-  const [data, loading, error] = useFetch(action);
+  const { status, data, error } = useFetch(action.url);
 
-  if (loading) return loader;
+  if (status === 'fetching') return loader;
   if (error) return <div>{error}</div>;
   if (!data) return null;
 
