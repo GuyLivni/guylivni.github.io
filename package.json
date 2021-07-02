@@ -16,6 +16,11 @@
     "styled-components"
   ],
   "dependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "@types/styled-components": "^5.1.10",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.4",
@@ -43,8 +48,8 @@
     "gsap": "^3.6.0",
     "js-cookie": "^2.2.1",
     "prismjs": "^1.24.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-switch": "^6.0.0",
@@ -52,6 +57,7 @@
     "styled-components": "^5.2.1",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13",
+    "typescript": "^4.3.5",
     "typography": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19"
   },
