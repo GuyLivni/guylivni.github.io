@@ -12,7 +12,7 @@ const components = {
   ContentfulHero: Hero,
 };
 
-const IndexPage = ({ location, data }) => {
+const IndexPage = ({ data }) => {
   const { contentfulPage } = data;
   const { metadata: pageMetadata, sections } = contentfulPage;
   const { metadata: siteMetadata } = useSiteData();
@@ -33,7 +33,6 @@ const IndexPage = ({ location, data }) => {
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default IndexPage;

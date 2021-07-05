@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Social from '../Social';
 import { Container, Title, PreTitle, PostTitle } from './Hero.styled';
 
-function Hero({ title, titlePrefix, description, socialLinks }) {
+function Hero({ title, titlePrefix, socialLinks }) {
   return (
     <Container>
       <Container>

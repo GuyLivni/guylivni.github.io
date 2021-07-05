@@ -3,13 +3,13 @@ import Social from '../Social';
 import { Container, Content, FooterInner, CopyRights } from './Footer.styled';
 import { SocialLinks } from '../../types/Social';
 
-type Footer = {
+type FooterProps = {
   children: React.ReactNode;
   copyrights: string;
   socialLinks: SocialLinks;
 };
 
-const Footer = ({ children, copyrights, socialLinks }: Footer) => {
+const Footer = ({ children, copyrights, socialLinks }: FooterProps) => {
   return (
     <Container>
       <Content>{children}</Content>

@@ -28,7 +28,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const selectedLinkStyles = ({ theme, to, pathname }) =>
+const selectedLinkStyles = ({ to, pathname }) =>
   to === pathname &&
   css`
     :before {
@@ -62,7 +62,7 @@ export const Link = styled(AniLink).attrs(({ theme }) => ({
   ${linkStyles}${selectedLinkStyles}
 `;
 
-const selectedIconStyles = ({ theme, to, pathname }) =>
+const selectedIconStyles = ({ to, pathname }) =>
   to === pathname &&
   css`
     opacity: 1;

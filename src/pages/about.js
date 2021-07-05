@@ -12,7 +12,7 @@ const components = {
   ContentfulSkillsList: SkillsList,
 };
 
-function AboutPage({ location, data }) {
+function AboutPage({ data }) {
   const { avatar, contentfulPage } = data;
   const { sections, metadata } = contentfulPage;
 
@@ -30,7 +30,6 @@ function AboutPage({ location, data }) {
 
 AboutPage.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default AboutPage;

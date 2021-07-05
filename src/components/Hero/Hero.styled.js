@@ -53,7 +53,7 @@ export const PreTitle = styled('span')`
   ${preStyles}
 `;
 
-const postTitleStyles = ({ theme }) => css`
+const postTitleStyles = () => css`
   animation: ${animations.fadeInUp} 0.6s 0.6s ease-out both;
 `;
 

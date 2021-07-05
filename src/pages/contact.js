@@ -13,7 +13,7 @@ const components = {
   ContentfulShortText: ShortText,
 };
 
-function ContactPage({ location, data }) {
+function ContactPage({ data }) {
   const { metadata: siteMetadata } = useSiteData();
   const { contentfulPage } = data;
   const { sections, metadata } = contentfulPage;
@@ -29,7 +29,6 @@ function ContactPage({ location, data }) {
 
 ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default ContactPage;

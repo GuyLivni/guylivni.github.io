@@ -5,7 +5,7 @@ import { Container, Link, StyledIcon } from './MobileMenu.styled';
 function MobileMenu({ location, routes }) {
   return (
     <Container>
-      {routes.map(({ Icon, path, label }, index) => (
+      {routes.map(({ Icon, path }, index) => (
         <Link paintDrip key={index} to={path} pathname={location.pathname}>
           <StyledIcon
             pathname={location.pathname}

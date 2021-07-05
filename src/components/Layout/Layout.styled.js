@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const contentStyles = ({ theme, location }) => css`
+const contentStyles = ({ theme }) => css`
   position: relative;
   display: flex;
   flex-direction: column;
