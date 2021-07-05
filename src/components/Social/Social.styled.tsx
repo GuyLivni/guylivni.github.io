@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { animations } from '../../styles';
 
 const containerStyles = css`
@@ -7,14 +7,15 @@ const containerStyles = css`
   align-items: center;
 `;
 
-const containerAnimateStyles = ({ theme, animate }) =>
+const containerAnimateStyles = ({ animate }: { animate?: boolean }) =>
   animate &&
   css`
     animation: ${animations.fadeInUp} 0.6s 0.8s ease both;
   `;
 
 export const Container = styled('div')`
-  ${containerStyles}${containerAnimateStyles}
+  ${containerStyles};
+  ${containerAnimateStyles};
 `;
 
 export const Href = styled('a')`
@@ -23,13 +24,19 @@ export const Href = styled('a')`
   display: flex;
 `;
 
-const invertStyles = ({ theme, invert }) =>
+const invertStyles = ({
+  theme,
+  invert,
+}: {
+  theme: DefaultTheme;
+  invert: boolean;
+}) =>
   invert &&
   css`
     color: ${theme.colors.p500};
   `;
 
-const iconStyles = ({ theme }) => css`
+const iconStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: flex;
   font-size: 20px;
   color: ${theme.colors.p600};
@@ -43,10 +50,11 @@ const iconStyles = ({ theme }) => css`
 `;
 
 export const StyledIcon = styled('div')`
-  ${iconStyles}${invertStyles}
+  ${iconStyles};
+  ${invertStyles};
 `;
 
-const titleStyles = ({ theme }) => css`
+const titleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   color: ${theme.colors.p600};
   :after {
     content: '';

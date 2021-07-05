@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 import {
   Container,
   TitleContainer,
@@ -9,7 +9,13 @@ import {
   Text,
 } from './About.styled';
 
-function About({ title, image, content }) {
+type About = {
+  title: string;
+  image: IGatsbyImageData;
+  content: Record<string, string>;
+};
+
+const About = ({ title, image, content }: About) => {
   return (
     <Container>
       <TitleContainer>
@@ -21,12 +27,6 @@ function About({ title, image, content }) {
       </ContentContainer>
     </Container>
   );
-}
-
-About.propTypes = {
-  title: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
-  content: PropTypes.object.isRequired,
 };
 
 export default About;

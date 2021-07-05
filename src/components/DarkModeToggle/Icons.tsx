@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
 const baseStyles = css`
   display: flex;
@@ -10,7 +10,7 @@ const baseStyles = css`
   height: 100%;
 `;
 
-const moonStyles = ({ theme }) => css`
+const moonStyles = ({ theme }: { theme: DefaultTheme }) => css`
   font-size: 14px;
   padding: 0px 0 0px 3px;
   ${baseStyles}
@@ -24,7 +24,7 @@ const StyledMoon = styled('span')`
   ${moonStyles}
 `;
 
-const sunStyles = ({ theme }) => css`
+const sunStyles = ({ theme }: { theme: DefaultTheme }) => css`
   font-size: 17px;
   padding: 0;
   ${baseStyles}

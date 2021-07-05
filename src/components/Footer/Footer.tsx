@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Social from '../Social';
 import { Container, Content, FooterInner, CopyRights } from './Footer.styled';
+import { SocialLinks } from '../../types/Social';
 
-function Footer({ children, copyrights, socialLinks }) {
+type Footer = {
+  children: React.ReactNode;
+  copyrights: string;
+  socialLinks: SocialLinks;
+};
+
+const Footer = ({ children, copyrights, socialLinks }: Footer) => {
   return (
     <Container>
       <Content>{children}</Content>
@@ -13,12 +19,6 @@ function Footer({ children, copyrights, socialLinks }) {
       </FooterInner>
     </Container>
   );
-}
-
-Footer.propTypes = {
-  children: PropTypes.object.isRequired,
-  copyrights: PropTypes.string.isRequired,
-  socialLinks: PropTypes.array.isRequired,
 };
 
 export default Footer;

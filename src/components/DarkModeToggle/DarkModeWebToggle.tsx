@@ -6,15 +6,13 @@ import {
   ToggleBtn,
 } from './DarkModeWebToggle.styled';
 
-type DarkModeWebToggleProps = {
-  onModeSwitch: Function;
-  isDark: boolean;
-};
-
 const DarkModeWebToggle = ({
   onModeSwitch,
   isDark,
-}: DarkModeWebToggleProps) => {
+}: {
+  onModeSwitch: Function;
+  isDark: boolean;
+}) => {
   return (
     <Container>
       <Switch

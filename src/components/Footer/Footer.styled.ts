@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   padding-left: 0;
   z-index: 1;
   position: relative;
@@ -28,7 +28,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const contentStyles = ({ theme }) => css`
+const contentStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ export const Content = styled('div')`
   ${contentStyles}
 `;
 
-const footerInnerStyles = ({ theme }) => css`
+const footerInnerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   min-height: 80px;
   display: flex;
   flex-direction: column-reverse;
@@ -72,7 +72,7 @@ export const FooterInner = styled('div')`
   ${footerInnerStyles}
 `;
 
-const copyrightsStyles = ({ theme }) => css`
+const copyrightsStyles = ({ theme }: { theme: DefaultTheme }) => css`
   text-align: center;
   color: ${theme.colors.p500};
   font-size: 12px;

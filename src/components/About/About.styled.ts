@@ -1,7 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   flex-direction: column;
 
   @media ${theme.device.tablet} {
@@ -20,7 +20,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const titleContainerStyles = ({ theme }) => css`
+const titleContainerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   @media ${theme.device.wideDesktop} {
     width: 30%;
     margin-right: 10%;
@@ -31,7 +31,7 @@ export const TitleContainer = styled('div')`
   ${titleContainerStyles}
 `;
 
-const titleStyles = ({ theme }) => css`
+const titleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   margin-top: 0;
   color: ${theme.colors.p400};
 
@@ -44,7 +44,7 @@ export const Title = styled('h2')`
   ${titleStyles}
 `;
 
-const contentContainerStyles = ({ theme }) => css`
+const contentContainerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   @media ${theme.device.wideDesktop} {
     width: 60%;
   }
@@ -54,7 +54,7 @@ export const ContentContainer = styled('div')`
   ${contentContainerStyles}
 `;
 
-const imageStyles = ({ theme }) => css`
+const imageStyles = ({ theme }: { theme: DefaultTheme }) => css`
   left: 0;
   top: 0;
   margin-bottom: 20px;
@@ -69,7 +69,7 @@ export const Image = styled(GatsbyImage)`
   ${imageStyles}
 `;
 
-const textStyles = ({ theme }) => css`
+const textStyles = ({ theme }: { theme: DefaultTheme }) => css`
   color: ${theme.colors.textColor};
 
   @media ${theme.device.wideDesktop} {

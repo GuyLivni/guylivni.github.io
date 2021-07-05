@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { IconType } from 'react-icons';
 import {
   FaLinkedinIn,
   FaGithub,
@@ -7,9 +7,10 @@ import {
   FaMedium,
   FaEnvelope,
 } from 'react-icons/fa/';
+import { SocialLinks, Label } from '../../types/Social';
 import { Container, Href, StyledIcon, Title } from './Social.styled';
 
-const ICON_MAP = {
+const ICON_MAP: IconMap = {
   Github: FaGithub,
   Medium: FaMedium,
   Twitter: FaTwitter,
@@ -17,16 +18,28 @@ const ICON_MAP = {
   Email: FaEnvelope,
 };
 
-const mapLinksWithIcons = (links) =>
-  links.map(({ label, url }) => {
-    return {
-      label,
-      url: label === 'Email' ? `mailto:${url}` : url,
-      Icon: ICON_MAP[label],
-    };
-  });
+type IconMap = Record<Label, IconType>;
 
-function Social({ links, showTitle, invert, animate }) {
+const mapLinksWithIcons = (links: SocialLinks) =>
+  links.map(({ label, url }) => ({
+    label,
+    url: label === 'Email' ? `mailto:${url}` : url,
+    Icon: ICON_MAP[label],
+  }));
+
+type SocialProps = {
+  links: SocialLinks;
+  showTitle?: boolean;
+  invert: boolean;
+  animate?: boolean;
+};
+
+const Social = ({
+  links,
+  showTitle = false,
+  invert = false,
+  animate,
+}: SocialProps) => {
   const icons = mapLinksWithIcons(links);
 
   return (
@@ -47,23 +60,6 @@ function Social({ links, showTitle, invert, animate }) {
       ))}
     </Container>
   );
-}
-
-Social.propTypes = {
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string,
-      label: PropTypes.string,
-    })
-  ).isRequired,
-  showTitle: PropTypes.bool,
-  invert: PropTypes.bool,
-  animate: PropTypes.bool,
-};
-
-Social.defaultProps = {
-  showTitle: false,
-  invert: false,
 };
 
 export default Social;
