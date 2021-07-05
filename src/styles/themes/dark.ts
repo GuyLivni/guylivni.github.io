@@ -1,3 +1,4 @@
+import { DefaultTheme } from 'styled-components';
 import { deviceMq } from '../style-helpers';
 
 const white = '#FFFFFF';
@@ -39,17 +40,17 @@ const misc = {
   textColor: white,
 };
 
-export const transitions = {
+const transitions = {
   default: '200ms ease-out',
 };
 
-export const fontWeight = {
+const fontWeight = {
   standard: '400',
   medium: '500',
   bold: '700',
 };
 
-export const colors = {
+const colors = {
   white,
   black,
   ...misc,
@@ -59,4 +60,9 @@ export const colors = {
   ...darks,
 };
 
-export const device = deviceMq;
+export const darkTheme: DefaultTheme = {
+  colors,
+  fontWeight,
+  transitions,
+  device: deviceMq,
+};

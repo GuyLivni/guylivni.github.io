@@ -1,6 +1,10 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle, css, DefaultTheme } from 'styled-components';
 
-const globalStyles = ({ theme }) => css`
+type globalStylesProps = {
+  theme: DefaultTheme;
+};
+
+const globalStyles = ({ theme }: globalStylesProps) => css`
   @media ${theme.device.mobile} {
     html,
     body,
