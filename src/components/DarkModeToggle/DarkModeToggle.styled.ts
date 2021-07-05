@@ -1,7 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { fadeInDown } from '../../styles/animations';
 
-const labelStyles = ({ theme }) => css`
+type labelProps = {
+  theme: DefaultTheme;
+};
+
+const labelStyles = ({ theme }: labelProps) => css`
   display: flex;
   align-items: center;
   animation: ${fadeInDown} 0.6s 0.2s ease both;

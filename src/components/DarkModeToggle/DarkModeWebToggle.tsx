@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Container,
   Switch,
@@ -7,7 +6,15 @@ import {
   ToggleBtn,
 } from './DarkModeWebToggle.styled';
 
-function DarkModeWebToggle({ onModeSwitch, isDark }) {
+type DarkModeWebToggleProps = {
+  onModeSwitch: Function;
+  isDark: boolean;
+};
+
+const DarkModeWebToggle = ({
+  onModeSwitch,
+  isDark,
+}: DarkModeWebToggleProps) => {
   return (
     <Container>
       <Switch
@@ -22,11 +29,6 @@ function DarkModeWebToggle({ onModeSwitch, isDark }) {
       </Label>
     </Container>
   );
-}
-
-DarkModeWebToggle.propTypes = {
-  onModeSwitch: PropTypes.func.isRequired,
-  isDark: PropTypes.bool.isRequired,
 };
 
 export default DarkModeWebToggle;

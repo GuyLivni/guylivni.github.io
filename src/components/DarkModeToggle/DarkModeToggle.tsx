@@ -1,11 +1,27 @@
 import React from 'react';
 import Switch from 'react-switch';
-import PropTypes from 'prop-types';
+import { DefaultTheme } from 'styled-components';
 import { Moon, Sun } from './Icons';
 import DarkModeWebToggle from './DarkModeWebToggle';
 import { Label } from './DarkModeToggle.styled';
 
-function DarkModeToggle({ onModeSwitch, isDark, theme }) {
+type onModeSwitch = (
+  checked: boolean,
+  event: React.SyntheticEvent<MouseEvent | KeyboardEvent> | MouseEvent,
+  id: string
+) => void;
+
+type DarkModeToggleProps = {
+  onModeSwitch: onModeSwitch;
+  isDark: boolean;
+  theme: DefaultTheme;
+};
+
+const DarkModeToggle = ({
+  onModeSwitch,
+  isDark,
+  theme,
+}: DarkModeToggleProps) => {
   return (
     <>
       <DarkModeWebToggle onModeSwitch={onModeSwitch} isDark={isDark} />
@@ -25,12 +41,6 @@ function DarkModeToggle({ onModeSwitch, isDark, theme }) {
       </Label>
     </>
   );
-}
-
-DarkModeToggle.propTypes = {
-  onModeSwitch: PropTypes.func.isRequired,
-  isDark: PropTypes.bool.isRequired,
-  theme: PropTypes.object.isRequired,
 };
 
 export default DarkModeToggle;

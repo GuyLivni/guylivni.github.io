@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement } from 'react';
 import { useFetch } from '../../hooks';
 import { general } from '../../constants';
 
@@ -23,11 +23,11 @@ type FetcherProps = {
 
 const DefaultLoader = () => <>{general.LOADING_TEXT}</>;
 
-const Fetcher: FC<FetcherProps> = ({
+const Fetcher = ({
   action,
   loader = DefaultLoader,
   children,
-}) => {
+}: FetcherProps) => {
   const { status, data, error } = useFetch<Post[]>(action.url);
 
   if (status === 'fetching') return loader;
