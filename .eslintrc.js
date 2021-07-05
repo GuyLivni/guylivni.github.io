@@ -1,7 +1,16 @@
 module.exports = {
-  extends: ['react-app', 'plugin:react/recommended', 'prettier'],
-  plugins: ['prettier', 'jsx-a11y', 'react-hooks'],
+  parser: '@typescript-eslint/parser',
+  extends: [
+    'react-app',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+  ],
+  plugins: ['@typescript-eslint', 'prettier', 'jsx-a11y', 'react-hooks'],
   rules: {
+    'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'prettier/prettier': 'warn',

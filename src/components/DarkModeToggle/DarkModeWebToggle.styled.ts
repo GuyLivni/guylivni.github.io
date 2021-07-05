@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { fadeInFromRight } from '../../styles/animations';
 
 const labelStyles = css`
@@ -13,7 +13,7 @@ export const Label = styled('label')`
   ${labelStyles}
 `;
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: fixed;
   top: 28%;
   right: 120px;
@@ -36,7 +36,13 @@ export const Switch = styled('input')`
   left: 0;
 `;
 
-const lightStyles = ({ isDark, theme }) => css`
+const lightStyles = ({
+  isDark,
+  theme,
+}: {
+  theme: DefaultTheme;
+  isDark: boolean;
+}) => css`
   :before {
     content: 'LIGHT';
     color: ${isDark ? theme.colors.p300 : theme.colors.p000};
@@ -51,7 +57,13 @@ const lightStyles = ({ isDark, theme }) => css`
   }
 `;
 
-const darkStyles = ({ isDark, theme }) => css`
+const darkStyles = ({
+  isDark,
+  theme,
+}: {
+  theme: DefaultTheme;
+  isDark: boolean;
+}) => css`
   :after {
     content: 'DARK';
     color: ${isDark ? theme.colors.white : theme.colors.p400};
@@ -84,7 +96,7 @@ const darkStyles = ({ isDark, theme }) => css`
   }
 `;
 
-const toggleBtnStyles = ({ theme }) => css`
+const toggleBtnStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: relative;
   cursor: pointer;
   flex: 0 0 46px;
