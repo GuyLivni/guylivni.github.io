@@ -1,4 +1,4 @@
-import { keyframes, css } from 'styled-components';
+import { keyframes, css, DefaultTheme } from 'styled-components';
 
 export const fadeInUp = keyframes`
     0% {
@@ -42,7 +42,7 @@ export const fadeOut = keyframes`
     100% { opacity:0; }
 `;
 
-export const underlineEffect = ({ theme }) => css`
+export const underlineEffect = ({ theme }: { theme: DefaultTheme }) => css`
   :before {
     content: '';
     display: block;

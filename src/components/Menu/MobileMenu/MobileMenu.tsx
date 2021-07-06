@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container, Link, StyledIcon } from './MobileMenu.styled';
+import { Routes } from '../../../types/Menu';
 
-function MobileMenu({ location, routes }) {
+type MobileMenuProps = {
+  location: Record<string, unknown>;
+  routes: Routes;
+};
+
+const MobileMenu = ({ location, routes }: MobileMenuProps) => {
   return (
     <Container>
       {routes.map(({ Icon, path }, index) => (
@@ -16,17 +21,6 @@ function MobileMenu({ location, routes }) {
       ))}
     </Container>
   );
-}
-
-MobileMenu.propTypes = {
-  location: PropTypes.object.isRequired,
-  routes: PropTypes.arrayOf(
-    PropTypes.shape({
-      path: PropTypes.string,
-      label: PropTypes.string,
-      Icon: PropTypes.func,
-    })
-  ).isRequired,
 };
 
 export default MobileMenu;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// @ts-ignore
 import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import {
   FaHome,
@@ -8,6 +9,7 @@ import {
 } from 'react-icons/fa/';
 import MobileMenu from './MobileMenu';
 import { Nav, NavLinks, Link } from './Menu.styled';
+import { Routes } from '../../types/Menu';
 
 const ICON_MAP = {
   Home: FaHome,
@@ -16,7 +18,7 @@ const ICON_MAP = {
   Contact: FaEnvelope,
 };
 
-const mapRoutesWithIcons = (routes) =>
+const mapRoutesWithIcons = (routes: Routes) =>
   routes.map(({ path, label }) => {
     return {
       path,
@@ -29,7 +31,12 @@ const transitionDirections = ['top', 'right', 'left', 'bottom'];
 const getRandomTransitionDirection = () =>
   transitionDirections[Math.floor(Math.random() * transitionDirections.length)];
 
-function Menu({ location, routes }) {
+type MenuProps = {
+  location: Record<string, unknown>;
+  routes: Routes;
+};
+
+const Menu = ({ location, routes }: MenuProps) => {
   const [transitionDirection, setTransitionDirection] = useState(
     getRandomTransitionDirection()
   );
@@ -58,6 +65,6 @@ function Menu({ location, routes }) {
       </NavLinks>
     </Nav>
   );
-}
+};
 
 export default Menu;

@@ -1,9 +1,10 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
+// @ts-ignore
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { underlineEffect } from '../../../styles/animations';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: fixed;
   display: flex;
   justify-content: space-around;
@@ -28,7 +29,13 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const selectedLinkStyles = ({ to, pathname }) =>
+const selectedLinkStyles = ({
+  to,
+  pathname,
+}: {
+  to: string;
+  pathname: string;
+}) =>
   to === pathname &&
   css`
     :before {
@@ -36,7 +43,7 @@ const selectedLinkStyles = ({ to, pathname }) =>
     }
   `;
 
-const linkStyles = ({ theme }) => css`
+const linkStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -56,19 +63,28 @@ const linkStyles = ({ theme }) => css`
   }
 `;
 
-export const Link = styled(AniLink).attrs(({ theme }) => ({
-  color: theme.colors.p700,
-}))`
-  ${linkStyles}${selectedLinkStyles}
+export const Link = styled(AniLink).attrs(
+  ({ theme }: { theme: DefaultTheme }) => ({
+    color: theme.colors.p700,
+  })
+)`
+  ${linkStyles};
+  ${selectedLinkStyles};
 `;
 
-const selectedIconStyles = ({ to, pathname }) =>
+const selectedIconStyles = ({
+  to,
+  pathname,
+}: {
+  to: string;
+  pathname: string;
+}) =>
   to === pathname &&
   css`
     opacity: 1;
   `;
 
-const iconStyles = ({ theme }) => css`
+const iconStyles = ({ theme }: { theme: DefaultTheme }) => css`
   font-size: 26px;
   color: ${theme.colors.p300};
   margin: 0 auto;
@@ -90,5 +106,6 @@ const iconStyles = ({ theme }) => css`
 export const StyledIcon = styled(({ component, ...props }) =>
   React.cloneElement(component, props)
 )`
-  ${iconStyles}${selectedIconStyles}
+  ${iconStyles};
+  ${selectedIconStyles};
 `;

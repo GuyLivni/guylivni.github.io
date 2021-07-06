@@ -1,8 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
+// @ts-ignore
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { underlineEffect, fadeInDown } from '../../styles/animations';
 
-const navStyles = ({ theme }) => css`
+const navStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: flex;
   align-items: center;
   height: 100%;
@@ -18,7 +19,15 @@ export const Nav = styled('nav')`
   ${navStyles}
 `;
 
-const selectedLinkStyles = ({ to, pathname, theme }) =>
+const selectedLinkStyles = ({
+  to,
+  pathname,
+  theme,
+}: {
+  to: string;
+  pathname: string;
+  theme: DefaultTheme;
+}) =>
   to === pathname &&
   css`
     font-weight: ${theme.fontWeight.bold};
@@ -29,7 +38,7 @@ const selectedLinkStyles = ({ to, pathname, theme }) =>
     }
   `;
 
-const linkStyles = ({ theme }) => css`
+const linkStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: relative;
   display: flex;
   align-items: center;
@@ -59,13 +68,16 @@ const linkStyles = ({ theme }) => css`
   }
 `;
 
-export const Link = styled(AniLink).attrs(({ theme }) => ({
-  bg: theme.colors.p700,
-}))`
-  ${linkStyles} ${selectedLinkStyles}
+export const Link = styled(AniLink).attrs(
+  ({ theme }: { theme: DefaultTheme }) => ({
+    bg: theme.colors.p700,
+  })
+)`
+  ${linkStyles};
+  ${selectedLinkStyles};
 `;
 
-const navLinkStyles = ({ theme }) => css`
+const navLinkStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: none;
 
   @media ${theme.device.tablet} {

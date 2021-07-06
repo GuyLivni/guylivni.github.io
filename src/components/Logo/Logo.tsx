@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Container,
   FirstNamePostFix,
@@ -8,7 +7,7 @@ import {
   Ending,
 } from './Logo.styled';
 
-function Logo({ title = '' }) {
+const Logo = ({ title = '' }: { title: string }) => {
   const fullName = title.split(' ');
   const firstName = fullName[0];
   const lastName = fullName[1];
@@ -26,10 +25,6 @@ function Logo({ title = '' }) {
       <Ending>.</Ending>
     </Container>
   );
-}
-
-Logo.propTypes = {
-  title: PropTypes.string,
 };
 
 export default Logo;

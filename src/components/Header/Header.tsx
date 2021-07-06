@@ -4,13 +4,14 @@ import DarkModeToggle from '../DarkModeToggle';
 import Logo from '../Logo';
 import { Container, NavContainer } from './Header.styled';
 import { ModeSwitch } from '../../types/DarkMode';
+import { Routes } from '../../types/Menu';
 
 type HeaderProps = {
   location: Record<string, unknown>;
   onModeSwitch: ModeSwitch;
   isDark: boolean;
   author: string;
-  navigation: Record<string, unknown>;
+  navigation: Record<string, Routes>;
 };
 
 function Header({
