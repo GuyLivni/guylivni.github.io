@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
-const contentStyles = ({ theme }) => css`
+const contentStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ const contentStyles = ({ theme }) => css`
   }
 `;
 
-const contentHomeStyles = ({ location }) =>
+const contentHomeStyles = ({ location }: { location: { pathname: string } }) =>
   location.pathname === '/' &&
   css`
     max-width: 100%;
@@ -33,5 +33,6 @@ const contentHomeStyles = ({ location }) =>
   `;
 
 export const Content = styled('main')`
-  ${contentStyles}${contentHomeStyles}
+  ${contentStyles};
+  ${contentHomeStyles};
 `;

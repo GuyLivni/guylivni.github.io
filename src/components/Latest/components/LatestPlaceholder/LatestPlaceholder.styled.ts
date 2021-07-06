@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes, DefaultTheme } from 'styled-components';
 
 const placeHolderShimmer = keyframes`
   0%{
@@ -9,7 +9,7 @@ const placeHolderShimmer = keyframes`
   }
 `;
 
-const shimmerAnimationStyles = ({ theme }) => css`
+const shimmerAnimationStyles = ({ theme }: { theme: DefaultTheme }) => css`
   background: linear-gradient(
     90deg,
     ${theme.colors.p500} 8%,
@@ -20,7 +20,7 @@ const shimmerAnimationStyles = ({ theme }) => css`
   background-size: 800px 104px;
 `;
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: flex;
   align-items: flex-start;
   margin: 0 25px;
@@ -36,7 +36,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const iconStyles = ({ theme }) => css`
+const iconStyles = ({ theme }: { theme: DefaultTheme }) => css`
   background: ${theme.colors.p500};
   margin: 0 10px;
   width: 40px;
@@ -61,7 +61,7 @@ export const Description = styled('div')`
   ${descriptionStyles}
 `;
 
-const titleStyles = ({ theme }) => css`
+const titleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   width: 120px;
   height: 20px;
   margin: 5px 0 15px 0;
@@ -73,7 +73,7 @@ export const Title = styled('span')`
   ${titleStyles}
 `;
 
-const postTitleStyles = ({ theme }) => css`
+const postTitleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   width: 90px;
   height: 10px;
   background: ${theme.colors.p400};
@@ -85,7 +85,7 @@ export const PostTitle = styled('span')`
   ${postTitleStyles}
 `;
 
-const postDescriptionStyles = ({ theme }) => css`
+const postDescriptionStyles = ({ theme }: { theme: DefaultTheme }) => css`
   width: 70px;
   height: 10px;
   background: ${theme.colors.p400};

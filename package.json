@@ -64,6 +64,7 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@commitlint/prompt-cli": "^12.0.1",
+    "@types/react-helmet": "^6.1.1",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "babel-eslint": "^10.1.0",
@@ -90,7 +91,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/guylivni/guylivni.github.io",
-    "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
     "format": "prettier --write \"src/**/*.{js,jsx,json}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -104,7 +105,7 @@
     }
   },
   "lint-staged": {
-    "{gatsby-*.js,src/**/*.{js,jsx,json}}": [
+    "{gatsby-*.js,src/**/*.{js,jsx,ts,tsx,json}}": [
       "npm run lint --fix",
       "npm run format"
     ]

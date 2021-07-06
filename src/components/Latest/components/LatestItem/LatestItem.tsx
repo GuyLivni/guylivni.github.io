@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Container,
   StyledIcon,
@@ -9,14 +8,23 @@ import {
   Description,
 } from './LatestItem.styled';
 
-function LatestItem({
+type LatestItemProps = {
+  header: string;
+  title: string;
+  titleUrl?: string;
+  description: string;
+  descriptionUrl?: string;
+  icon: React.ReactNode;
+};
+
+const LatestItem = ({
   header,
   title,
   titleUrl,
   description,
   descriptionUrl,
   icon,
-}) {
+}: LatestItemProps) => {
   return (
     <Container>
       <StyledIcon>{icon}</StyledIcon>
@@ -35,15 +43,6 @@ function LatestItem({
       </Content>
     </Container>
   );
-}
-
-LatestItem.propTypes = {
-  header: PropTypes.string,
-  title: PropTypes.string,
-  titleUrl: PropTypes.string,
-  description: PropTypes.string,
-  descriptionUrl: PropTypes.string,
-  icon: PropTypes.node,
 };
 
 export default LatestItem;

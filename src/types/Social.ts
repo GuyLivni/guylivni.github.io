@@ -6,4 +6,3 @@ export type Link = {
 };
 
 export type SocialLinks = Link[];
-

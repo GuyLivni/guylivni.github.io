@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import {
   FaHome,
@@ -60,15 +59,5 @@ function Menu({ location, routes }) {
     </Nav>
   );
 }
-
-Menu.propTypes = {
-  location: PropTypes.object.isRequired,
-  routes: PropTypes.arrayOf(
-    PropTypes.shape({
-      path: PropTypes.string,
-      label: PropTypes.string,
-    })
-  ).isRequired,
-};
 
 export default Menu;

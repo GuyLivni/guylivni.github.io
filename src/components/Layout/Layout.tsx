@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';
 
@@ -11,7 +10,12 @@ import { GlobalStyles, themes } from '../../styles';
 import { useDarkMode, useSiteData } from '../../hooks';
 import { Content } from './Layout.styled';
 
-function Layout({ children, location }) {
+type LayoutProps = {
+  children: React.ReactNode;
+  location: { pathname: string };
+};
+
+const Layout = ({ children, location }: LayoutProps) => {
   const [isDark, setDark] = useDarkMode();
   const { metadata, footer, header } = useSiteData();
   const { repoUrl, author } = metadata;
@@ -37,7 +41,6 @@ function Layout({ children, location }) {
           onModeSwitch={(checked) => setDark(checked)}
           isDark={isDark}
           author={author}
-          repoUrl={repoUrl}
           navigation={header.navigation}
         />
         <Content location={location}>{children}</Content>
@@ -50,11 +53,6 @@ function Layout({ children, location }) {
       </>
     </ThemeProvider>
   );
-}
-
-Layout.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  location: PropTypes.object.isRequired,
 };
 
 export default Layout;

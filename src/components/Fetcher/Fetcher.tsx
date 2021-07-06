@@ -1,19 +1,7 @@
 import React, { ReactNode, ReactElement } from 'react';
 import { useFetch } from '../../hooks';
 import { general } from '../../constants';
-
-type Post = {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-};
-
-type Action = {
-  method: 'get' | 'post';
-  responseType: 'json';
-  url: string;
-};
+import { Action, Post } from '../../types/Api';
 
 type FetcherProps = {
   loader: ReactNode;
@@ -27,14 +15,14 @@ const Fetcher = ({
   action,
   loader = DefaultLoader,
   children,
-}: FetcherProps) => {
+}: FetcherProps): JSX.Element | null => {
   const { status, data, error } = useFetch<Post[]>(action.url);
 
-  if (status === 'fetching') return loader;
+  if (status === 'fetching') return loader as JSX.Element;
   if (error) return <>{error}</>;
   if (!data) return null;
 
-  return children(data);
+  return children(data) as JSX.Element;
 };
 
 export default Fetcher;

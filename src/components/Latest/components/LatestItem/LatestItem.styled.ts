@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { underlineEffect } from '../../../../styles/animations';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: flex;
   justify-content: flex-start;
   margin-bottom: 20px;
@@ -19,7 +19,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const styledIconStyles = ({ theme }) => css`
+const styledIconStyles = ({ theme }: { theme: DefaultTheme }) => css`
   svg {
     font-size: 40px;
     color: ${theme.colors.p500};
@@ -34,7 +34,7 @@ export const StyledIcon = styled('div')`
   ${styledIconStyles}
 `;
 
-const headerStyles = ({ theme }) => css`
+const headerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   font-size: 20px;
   font-weight: ${theme.fontWeight.bold};
   color: ${theme.colors.p500};
@@ -44,7 +44,7 @@ export const Header = styled('div')`
   ${headerStyles}
 `;
 
-const titleStyles = ({ theme }) => css`
+const titleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: relative;
   color: ${theme.colors.p500};
   box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);

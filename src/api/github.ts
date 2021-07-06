@@ -1,6 +1,7 @@
 import { github } from '../constants';
+import { Action } from '../types/Api';
 
-export function getUserEvents() {
+export const getUserEvents = (): Action => {
   const url = `${github.API_BASE_URL}/users/${github.MY_USERNAME}/events/public`;
 
   return {
@@ -8,4 +9,4 @@ export function getUserEvents() {
     url,
     responseType: 'json',
   };
-}
+};

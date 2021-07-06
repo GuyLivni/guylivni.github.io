@@ -3,10 +3,11 @@ import Menu from '../Menu';
 import DarkModeToggle from '../DarkModeToggle';
 import Logo from '../Logo';
 import { Container, NavContainer } from './Header.styled';
+import { ModeSwitch } from '../../types/DarkMode';
 
 type HeaderProps = {
   location: Record<string, unknown>;
-  onModeSwitch: () => void;
+  onModeSwitch: ModeSwitch;
   isDark: boolean;
   author: string;
   navigation: Record<string, unknown>;
