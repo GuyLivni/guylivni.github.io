@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Section from './components/Section';
@@ -8,12 +7,21 @@ const SectionsContainer = styled('div')`
   width: 100%;
 `;
 
-function Sections({ sections, components, ...rest }) {
+type SectionProps = {
+  __typename: number;
+};
+
+type SectionsProps = {
+  sections: SectionProps[];
+  components: React.ElementType[];
+};
+
+const Sections = ({ sections, components, ...rest }: SectionsProps) => {
   return (
     <SectionsContainer>
       {sections.map((section, index) => {
         const { __typename } = section;
-        const Component = components[__typename];
+        const Component = components?.[__typename];
 
         if (!Component) {
           return null;
@@ -27,11 +35,6 @@ function Sections({ sections, components, ...rest }) {
       })}
     </SectionsContainer>
   );
-}
-
-Sections.propTypes = {
-  sections: PropTypes.array.isRequired,
-  components: PropTypes.object.isRequired,
 };
 
 export default Sections;

@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   margin: 40px 40px 0 0;
 
   :first-child {
@@ -16,7 +16,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const skillTitleStyles = ({ theme }) => css`
+const skillTitleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   color: ${theme.colors.p600};
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
@@ -28,7 +28,7 @@ export const SkillTitle = styled('h4')`
   ${skillTitleStyles}
 `;
 
-const skillStyles = ({ theme }) => css`
+const skillStyles = ({ theme }: { theme: DefaultTheme }) => css`
   color: ${theme.colors.textColor};
 `;
 

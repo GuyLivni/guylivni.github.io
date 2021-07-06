@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const Container = styled('div')`
   margin-bottom: 40px;
@@ -11,12 +10,12 @@ const Container = styled('div')`
   }
 `;
 
-function Section({ children, ...rest }) {
-  return <Container {...rest}>{children}</Container>;
-}
+type SectionProps = {
+  children: React.ReactNode;
+};
 
-Section.propTypes = {
-  children: PropTypes.object.isRequired,
+const Section = ({ children, ...rest }: SectionProps) => {
+  return <Container {...rest}>{children}</Container>;
 };
 
 export default Section;

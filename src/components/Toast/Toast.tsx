@@ -1,8 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container, Img, StyledToast } from './Toast.styled';
 
-const getGreetingByTime = (toasts) => {
+type ToastOptions = 'Afternoon' | 'Evening' | 'Morning';
+
+type Toasts = { [x in ToastOptions]: string };
+
+type ToastProps = {
+  toasts: Toasts;
+};
+
+const getGreetingByTime = (toasts: Toasts) => {
   const currentHour = new Date().getHours();
 
   if (currentHour >= 12 && currentHour <= 17) {
@@ -14,17 +21,13 @@ const getGreetingByTime = (toasts) => {
   }
 };
 
-function Toast({ toasts }) {
+const Toast = ({ toasts }: ToastProps) => {
   return (
     <Container>
-      <Img alt="greeting" />
+      <Img />
       <StyledToast>{getGreetingByTime(toasts)}</StyledToast>
     </Container>
   );
-}
-
-Toast.propTypes = {
-  toasts: PropTypes.object.isRequired,
 };
 
 export default Toast;

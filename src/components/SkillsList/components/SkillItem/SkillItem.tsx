@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container, SkillTitle, Skill } from './SkillItem.styled';
 
-function SkillItem({ title, description }) {
+type SkillItemProps = {
+  title: string;
+  description: string[];
+};
+
+const SkillItem = ({ title, description }: SkillItemProps) => {
   return (
     <Container>
       <SkillTitle>{title}</SkillTitle>
@@ -13,11 +17,6 @@ function SkillItem({ title, description }) {
       </ul>
     </Container>
   );
-}
-
-SkillItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.array.isRequired,
 };
 
 export default SkillItem;

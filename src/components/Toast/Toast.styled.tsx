@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import CoffeeCup from '../../assets/cafe-cup-cookie.svg';
 import { fadeInUp, fadeOut } from '../../styles/animations';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: block;
   position: absolute;
   z-index: 10;
@@ -31,7 +31,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const toastStyles = ({ theme }) => css`
+const toastStyles = ({ theme }: { theme: DefaultTheme }) => css`
   width: 100%;
   text-align: center;
   background-color: transparent;
@@ -57,7 +57,7 @@ export const StyledToast = styled('div')`
   ${toastStyles}
 `;
 
-const imgStyles = ({ theme }) => css`
+const imgStyles = ({ theme }: { theme: DefaultTheme }) => css`
   position: absolute;
   left: -21px;
   bottom: -6px;

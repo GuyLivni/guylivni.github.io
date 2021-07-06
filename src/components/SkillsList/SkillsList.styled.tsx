@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   @media ${theme.device.wideDesktop} {
     display: flex;
   }
@@ -10,7 +10,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const titleContainerStyles = ({ theme }) => css`
+const titleContainerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   @media ${theme.device.wideDesktop} {
     width: 30%;
     margin-right: 10%;
@@ -21,7 +21,7 @@ export const TitleContainer = styled('div')`
   ${titleContainerStyles}
 `;
 
-const titleStyles = ({ theme }) => css`
+const titleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   margin-top: 0;
   color: ${theme.colors.p400};
 
@@ -34,7 +34,7 @@ export const Title = styled('h2')`
   ${titleStyles}
 `;
 
-const contentContainerStyles = ({ theme }) => css`
+const contentContainerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: flex;
   flex-direction: column;
   margin-top: 10px;
