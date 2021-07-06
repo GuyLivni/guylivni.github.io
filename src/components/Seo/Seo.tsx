@@ -3,10 +3,10 @@ import Helmet from 'react-helmet';
 import { useSiteData } from '../../hooks';
 
 type SEOProps = {
-  description: string;
-  lang: string;
-  meta: [];
-  keywords: string[];
+  description?: string;
+  lang?: string;
+  meta?: [];
+  keywords?: string[];
   title: string;
 };
 

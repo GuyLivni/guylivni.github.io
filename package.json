@@ -92,7 +92,7 @@
     "develop": "gatsby develop",
     "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/guylivni/guylivni.github.io",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
-    "format": "prettier --write \"src/**/*.{js,jsx,json}\"",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",

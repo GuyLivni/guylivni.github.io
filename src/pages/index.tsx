@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import Hero from '../components/Hero';
 import SEO from '../components/Seo';
@@ -12,7 +11,17 @@ const components = {
   ContentfulHero: Hero,
 };
 
-const IndexPage = ({ data }) => {
+type IndexPageProps = {
+  data: {
+    contentfulPage: {
+      sections: [];
+      metadata: { title: string; keywords: string };
+    };
+    avatar: { childImageSharp: { gatsbyImageData: Record<string, unknown> } };
+  };
+};
+
+const IndexPage = ({ data }: IndexPageProps) => {
   const { contentfulPage } = data;
   const { metadata: pageMetadata, sections } = contentfulPage;
   const { metadata: siteMetadata } = useSiteData();
@@ -29,10 +38,6 @@ const IndexPage = ({ data }) => {
       />
     </Fragment>
   );
-};
-
-IndexPage.propTypes = {
-  data: PropTypes.object.isRequired,
 };
 
 export default IndexPage;

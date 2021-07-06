@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import SEO from '../components/Seo';
 import About from '../components/About';
@@ -12,7 +11,17 @@ const components = {
   ContentfulSkillsList: SkillsList,
 };
 
-function AboutPage({ data }) {
+type AboutPageProps = {
+  data: {
+    contentfulPage: {
+      sections: [];
+      metadata: { title: string; keywords: string };
+    };
+    avatar: { childImageSharp: { gatsbyImageData: Record<string, unknown> } };
+  };
+};
+
+const AboutPage = ({ data }: AboutPageProps) => {
   const { avatar, contentfulPage } = data;
   const { sections, metadata } = contentfulPage;
 
@@ -26,10 +35,6 @@ function AboutPage({ data }) {
       />
     </Fragment>
   );
-}
-
-AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
 };
 
 export default AboutPage;

@@ -10,6 +10,8 @@ import LatestItem from './components/LatestItem';
 import * as GithubService from '../../services/github';
 import * as githubApi from '../../api/github';
 
+import { PushEvents } from '../../types/Github';
+
 const Container = styled('div')`
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +21,7 @@ const Container = styled('div')`
 const Latest = () => (
   <Container>
     <Fetcher action={githubApi.getUserEvents()} loader={<LatestPlaceholder />}>
-      {(events) => {
+      {(events: PushEvents) => {
         const pushEvents = events.filter(({ type }) => type === 'PushEvent');
 
         if (!pushEvents.length) {

@@ -8,12 +8,12 @@ const SectionsContainer = styled('div')`
 `;
 
 type SectionProps = {
-  __typename: number;
+  __typename: string;
 };
 
 type SectionsProps = {
   sections: SectionProps[];
-  components: React.ElementType[];
+  components: Record<string, React.ElementType>;
 };
 
 const Sections = ({ sections, components, ...rest }: SectionsProps) => {

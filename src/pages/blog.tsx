@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import SEO from '../components/Seo';
 import Sections from '../components/Sections';
@@ -14,7 +13,17 @@ const components = {
   ContentfulShortText: ShortText,
 };
 
-function BlogIndex({ data }) {
+type BlogPageProps = {
+  data: {
+    contentfulPage: {
+      sections: [];
+      metadata: { title: string; keywords: string };
+    };
+    avatar: { childImageSharp: { gatsbyImageData: Record<string, unknown> } };
+  };
+};
+
+const BlogIndex = ({ data }: BlogPageProps) => {
   // const { data } = this.props
   // const siteTitle = data.site.siteMetadata.title
   // const posts = data.allMarkdownRemark.edges
@@ -52,10 +61,6 @@ function BlogIndex({ data }) {
       })} */}
     </div>
   );
-}
-
-BlogIndex.propTypes = {
-  data: PropTypes.object.isRequired,
 };
 
 export default BlogIndex;
