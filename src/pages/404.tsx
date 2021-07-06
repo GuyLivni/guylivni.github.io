@@ -3,13 +3,14 @@ import { graphql } from 'gatsby';
 import SEO from '../components/Seo';
 import Sections from '../components/Sections';
 import ShortText from '../components/ShortText';
+import { Page } from '../types/Page';
 
 const components = {
   ContentfulShortText: ShortText,
 };
 
 type NotFoundPageProps = {
-  data: { contentfulPage: { sections: [] } };
+  data: Page;
 };
 
 const NotFoundPage = ({ data }: NotFoundPageProps) => {

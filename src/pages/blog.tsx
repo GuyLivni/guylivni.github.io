@@ -5,6 +5,8 @@ import SEO from '../components/Seo';
 import Sections from '../components/Sections';
 import ShortText from '../components/ShortText';
 
+import { Page } from '../types/Page';
+
 // import { Link, graphql } from "gatsby"
 // import Bio from "../components/bio"
 // import { rhythm } from "../styles/typography"
@@ -14,13 +16,7 @@ const components = {
 };
 
 type BlogPageProps = {
-  data: {
-    contentfulPage: {
-      sections: [];
-      metadata: { title: string; keywords: string };
-    };
-    avatar: { childImageSharp: { gatsbyImageData: Record<string, unknown> } };
-  };
+  data: Page;
 };
 
 const BlogIndex = ({ data }: BlogPageProps) => {

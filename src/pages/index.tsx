@@ -4,21 +4,15 @@ import { graphql } from 'gatsby';
 import Hero from '../components/Hero';
 import SEO from '../components/Seo';
 import Sections from '../components/Sections';
-
 import { useSiteData } from '../hooks';
+import { Page } from '../types/Page';
 
 const components = {
   ContentfulHero: Hero,
 };
 
 type IndexPageProps = {
-  data: {
-    contentfulPage: {
-      sections: [];
-      metadata: { title: string; keywords: string };
-    };
-    avatar: { childImageSharp: { gatsbyImageData: Record<string, unknown> } };
-  };
+  data: Page;
 };
 
 const IndexPage = ({ data }: IndexPageProps) => {

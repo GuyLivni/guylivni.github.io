@@ -5,6 +5,7 @@ import SEO from '../components/Seo';
 import About from '../components/About';
 import SkillsList from '../components/SkillsList';
 import Sections from '../components/Sections';
+import { Page } from '../types/Page';
 
 const components = {
   ContentfulShortText: About,
@@ -12,13 +13,7 @@ const components = {
 };
 
 type AboutPageProps = {
-  data: {
-    contentfulPage: {
-      sections: [];
-      metadata: { title: string; keywords: string };
-    };
-    avatar: { childImageSharp: { gatsbyImageData: Record<string, unknown> } };
-  };
+  data: Page;
 };
 
 const AboutPage = ({ data }: AboutPageProps) => {
@@ -31,7 +26,7 @@ const AboutPage = ({ data }: AboutPageProps) => {
       <Sections
         sections={sections}
         components={components}
-        {...{ image: avatar.childImageSharp.gatsbyImageData }}
+        {...{ image: avatar?.childImageSharp?.gatsbyImageData }}
       />
     </Fragment>
   );

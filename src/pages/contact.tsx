@@ -5,21 +5,15 @@ import SEO from '../components/Seo';
 import Sections from '../components/Sections';
 import ShortText from '../components/ShortText';
 import Social from '../components/Social';
-
 import { useSiteData } from '../hooks';
+import { Page } from '../types/Page';
 
 const components = {
   ContentfulShortText: ShortText,
 };
 
 type ContactPageProps = {
-  data: {
-    contentfulPage: {
-      sections: [];
-      metadata: { title: string; keywords: string };
-    };
-    avatar: { childImageSharp: { gatsbyImageData: Record<string, unknown> } };
-  };
+  data: Page;
 };
 
 const ContactPage = ({ data }: ContactPageProps) => {
