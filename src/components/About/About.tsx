@@ -9,13 +9,13 @@ import {
   Text,
 } from './About.styled';
 
-type About = {
+type AboutProps = {
   title: string;
   image: IGatsbyImageData;
   content: Record<string, string>;
 };
 
-const About = ({ title, image, content }: About) => {
+const About = ({ title, image, content }: AboutProps) => {
   return (
     <Container>
       <TitleContainer>

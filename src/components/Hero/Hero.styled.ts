@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { animations } from '../../styles';
 
-const containerStyles = ({ theme }) => css`
+const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -33,7 +33,7 @@ export const Container = styled('div')`
   ${containerStyles}
 `;
 
-const preStyles = ({ theme }) => css`
+const preStyles = ({ theme }: { theme: DefaultTheme }) => css`
   margin: 0;
   align-self: end;
   color: ${theme.colors.p300};
@@ -61,7 +61,7 @@ export const PostTitle = styled('span')`
   ${postTitleStyles}
 `;
 
-const titleStyles = ({ theme }) => css`
+const titleStyles = ({ theme }: { theme: DefaultTheme }) => css`
   color: ${theme.colors.p400};
   font-size: 40px;
   font-weight: ${theme.fontWeight.bold};

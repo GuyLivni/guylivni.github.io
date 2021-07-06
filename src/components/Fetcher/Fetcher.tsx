@@ -18,7 +18,7 @@ type Action = {
 type FetcherProps = {
   loader: ReactNode;
   action: Action;
-  children(data: Array<{}>): ReactElement;
+  children(data: Array<Record<string, unknown>>): ReactElement;
 };
 
 const DefaultLoader = () => <>{general.LOADING_TEXT}</>;

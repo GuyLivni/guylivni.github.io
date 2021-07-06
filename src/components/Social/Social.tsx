@@ -30,7 +30,7 @@ const mapLinksWithIcons = (links: SocialLinks) =>
 type SocialProps = {
   links: SocialLinks;
   showTitle?: boolean;
-  invert: boolean;
+  invert?: boolean;
   animate?: boolean;
 };
 

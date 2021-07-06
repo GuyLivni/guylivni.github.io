@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Social from '../Social';
 import { Container, Title, PreTitle, PostTitle } from './Hero.styled';
+import { SocialLinks } from '../../types/Social';
 
-function Hero({ title, titlePrefix, socialLinks }) {
+type HeroProps = {
+  title: string;
+  titlePrefix: string;
+  socialLinks: SocialLinks;
+};
+
+const Hero = ({ title, titlePrefix, socialLinks }: HeroProps) => {
   return (
     <Container>
       <Container>
@@ -15,13 +21,6 @@ function Hero({ title, titlePrefix, socialLinks }) {
       <Social links={socialLinks} showTitle animate />
     </Container>
   );
-}
-
-Hero.propTypes = {
-  socialLinks: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
-  titlePrefix: PropTypes.string,
-  description: PropTypes.string,
 };
 
 export default Hero;

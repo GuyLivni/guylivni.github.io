@@ -4,15 +4,10 @@ import { DefaultTheme } from 'styled-components';
 import { Moon, Sun } from './Icons';
 import DarkModeWebToggle from './DarkModeWebToggle';
 import { Label } from './DarkModeToggle.styled';
-
-type onModeSwitch = (
-  checked: boolean,
-  event: React.SyntheticEvent<MouseEvent | KeyboardEvent> | MouseEvent,
-  id: string
-) => void;
+import { ModeSwitch } from '../../types/DarkMode';
 
 type DarkModeToggleProps = {
-  onModeSwitch: onModeSwitch;
+  onModeSwitch: ModeSwitch;
   isDark: boolean;
   theme: DefaultTheme;
 };

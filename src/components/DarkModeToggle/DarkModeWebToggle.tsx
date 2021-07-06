@@ -5,12 +5,13 @@ import {
   Label,
   ToggleBtn,
 } from './DarkModeWebToggle.styled';
+import { ModeSwitch } from '../../types/DarkMode';
 
 const DarkModeWebToggle = ({
   onModeSwitch,
   isDark,
 }: {
-  onModeSwitch: Function;
+  onModeSwitch: ModeSwitch;
   isDark: boolean;
 }) => {
   return (

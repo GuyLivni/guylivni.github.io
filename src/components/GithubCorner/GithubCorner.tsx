@@ -1,9 +1,8 @@
 /* http://tholman.com/github-corners/ */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Href, StyledGitCorner } from './GithubCorner.styled';
 
-function GithubCorner({ url }) {
+function GithubCorner({ url }: { url: string }) {
   return (
     <Href
       href={url}
@@ -15,9 +14,5 @@ function GithubCorner({ url }) {
     </Href>
   );
 }
-
-GithubCorner.propTypes = {
-  url: PropTypes.string.isRequired,
-};
 
 export default GithubCorner;

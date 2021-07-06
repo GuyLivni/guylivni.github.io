@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes, DefaultTheme } from 'styled-components';
 import GitCorner from '../../assets/github-corner-left.svg';
 
 const octocatWave = keyframes`
@@ -13,7 +13,7 @@ const octocatWave = keyframes`
   }
 `;
 
-const hrefStyles = ({ theme }) => css`
+const hrefStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: none;
   z-index: 10000;
   position: fixed;
@@ -27,7 +27,7 @@ export const Href = styled('a')`
   ${hrefStyles}
 `;
 
-const cornerStyles = ({ theme }) => css`
+const cornerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   fill: ${theme.colors.p600} !important;
 
   .octo-body,
