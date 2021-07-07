@@ -1,5 +1,6 @@
 import { github } from '../constants';
 import { Commit, Repo, PushEvents } from '../types/Github';
+import { Action } from '../types/Api';
 
 function mapApiToDomainUrl(url: string) {
   return url.replace(`${github.API_BASE_URL}/repos`, github.GITHUB_URL);
@@ -35,3 +36,12 @@ export function getLatestCommit(pushEvents: PushEvents) {
     repo,
   };
 }
+
+export const getUserEvents = (): Action => {
+  const url = `${github.API_BASE_URL}/users/${github.MY_USERNAME}/events/public`;
+
+  return {
+    queryKey: 'github',
+    url,
+  };
+};

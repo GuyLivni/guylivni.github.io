@@ -8,7 +8,6 @@ import LatestPlaceholder from './components/LatestPlaceholder';
 import LatestItem from './components/LatestItem';
 
 import * as GithubService from '../../services/github';
-import * as githubApi from '../../api/github';
 
 import { PushEvents } from '../../types/Github';
 
@@ -20,7 +19,10 @@ const Container = styled('div')`
 
 const Latest = () => (
   <Container>
-    <Fetcher action={githubApi.getUserEvents()} loader={<LatestPlaceholder />}>
+    <Fetcher
+      action={GithubService.getUserEvents()}
+      loader={<LatestPlaceholder />}
+    >
       {(events: PushEvents) => {
         const pushEvents = events.filter(({ type }) => type === 'PushEvent');
 

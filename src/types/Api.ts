@@ -1,6 +1,5 @@
 export type Action = {
-  method: 'get' | 'post';
-  responseType: 'json';
+  queryKey: string;
   url: string;
 };
 
