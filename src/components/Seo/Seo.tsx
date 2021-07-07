@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useSiteData } from '../../hooks';
 
-type SEOProps = {
+type Props = {
   description?: string;
   lang?: string;
   meta?: [];
@@ -16,7 +16,7 @@ const SEO = ({
   meta = [],
   keywords = [],
   title,
-}: SEOProps) => {
+}: Props) => {
   const { metadata } = useSiteData();
   const metaDescription = description || metadata.description;
 

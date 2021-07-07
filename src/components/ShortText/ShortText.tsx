@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { Title, SubTitle, Text } from './ShortText.styled';
 
-type ShortTextProps = {
+type Props = {
   title: string;
   subTitle: string;
   content: Record<string, string>;
 };
 
-const ShortText = ({ title, subTitle, content }: ShortTextProps) => (
+const ShortText = ({ title, subTitle, content }: Props) => (
   <Fragment>
     <Title>{title}</Title>
     {subTitle && <SubTitle>{subTitle}</SubTitle>}

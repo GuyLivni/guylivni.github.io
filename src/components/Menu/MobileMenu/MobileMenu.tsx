@@ -1,9 +1,10 @@
 import React from 'react';
+import { HistoryLocation } from '@reach/router';
 import { Container, Link, StyledIcon } from './MobileMenu.styled';
 import { Routes } from '../../../types/Menu';
 
 type MobileMenuProps = {
-  location: Record<string, unknown>;
+  location: HistoryLocation;
   routes: Routes;
 };
 

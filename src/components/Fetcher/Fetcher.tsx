@@ -1,21 +1,21 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode } from 'react';
 import { useFetchQuery } from '../../hooks';
 import { general } from '../../constants';
 import { Action } from '../../types/Api';
 
-type FetcherProps = {
+type Props = {
   loader: ReactNode;
   action: Action;
-  children(data: Array<Record<string, unknown>>): ReactElement;
+  children(data: Array<Record<string, unknown>>): ReactNode;
 };
 
-const DefaultLoader = () => <>{general.LOADING_TEXT}</>;
+const DefaultLoader = (): ReactNode => <>{general.LOADING_TEXT}</>;
 
 const Fetcher = ({
   action,
   loader = DefaultLoader,
   children,
-}: FetcherProps): JSX.Element | null => {
+}: Props): JSX.Element | null => {
   const { isLoading, data, error, isError } = useFetchQuery(action);
 
   if (isLoading) return loader as JSX.Element;

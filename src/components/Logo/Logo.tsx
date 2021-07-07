@@ -7,7 +7,11 @@ import {
   Ending,
 } from './Logo.styled';
 
-const Logo = ({ title = '' }: { title: string }) => {
+type Props = {
+  title: string;
+};
+
+const Logo = ({ title = '' }: Props) => {
   const fullName = title.split(' ');
   const firstName = fullName[0];
   const lastName = fullName[1];

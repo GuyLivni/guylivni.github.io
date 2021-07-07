@@ -10,11 +10,11 @@ const Container = styled('div')`
   }
 `;
 
-type SectionProps = {
+type Props = {
   children: React.ReactNode;
 };
 
-const Section = ({ children, ...rest }: SectionProps) => {
+const Section = ({ children, ...rest }: Props) => {
   return <Container {...rest}>{children}</Container>;
 };
 

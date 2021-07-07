@@ -3,24 +3,22 @@ import Social from '../Social';
 import { Container, Title, PreTitle, PostTitle } from './Hero.styled';
 import { SocialLinks } from '../../types/Social';
 
-type HeroProps = {
+type Props = {
   title: string;
   titlePrefix: string;
   socialLinks: SocialLinks;
 };
 
-const Hero = ({ title, titlePrefix, socialLinks }: HeroProps) => {
-  return (
+const Hero = ({ title, titlePrefix, socialLinks }: Props) => (
+  <Container>
     <Container>
-      <Container>
-        <Title>
-          <PreTitle>{titlePrefix} </PreTitle>
-          <PostTitle>{title}</PostTitle>
-        </Title>
-      </Container>
-      <Social links={socialLinks} showTitle animate />
+      <Title>
+        <PreTitle>{titlePrefix} </PreTitle>
+        <PostTitle>{title}</PostTitle>
+      </Title>
     </Container>
-  );
-};
+    <Social links={socialLinks} showTitle animate />
+  </Container>
+);
 
 export default Hero;

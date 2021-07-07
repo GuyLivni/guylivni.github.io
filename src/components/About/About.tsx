@@ -9,24 +9,22 @@ import {
   Text,
 } from './About.styled';
 
-type AboutProps = {
+type Props = {
   title: string;
   image: IGatsbyImageData;
   content: Record<string, string>;
 };
 
-const About = ({ title, image, content }: AboutProps) => {
-  return (
-    <Container>
-      <TitleContainer>
-        <Title>{title}</Title>
-      </TitleContainer>
-      <ContentContainer>
-        <Image image={image} alt="Author image" />
-        <Text>{content.content}</Text>
-      </ContentContainer>
-    </Container>
-  );
-};
+const About = ({ title, image, content }: Props) => (
+  <Container>
+    <TitleContainer>
+      <Title>{title}</Title>
+    </TitleContainer>
+    <ContentContainer>
+      <Image image={image} alt="Author image" />
+      <Text>{content.content}</Text>
+    </ContentContainer>
+  </Container>
+);
 
 export default About;

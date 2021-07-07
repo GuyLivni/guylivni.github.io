@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { HistoryLocation } from '@reach/router';
 // @ts-ignore
 import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import {
@@ -32,7 +33,7 @@ const getRandomTransitionDirection = () =>
   transitionDirections[Math.floor(Math.random() * transitionDirections.length)];
 
 type MenuProps = {
-  location: Record<string, unknown>;
+  location: HistoryLocation;
   routes: Routes;
 };
 

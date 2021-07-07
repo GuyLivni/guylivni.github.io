@@ -27,7 +27,7 @@ const mapLinksWithIcons = (links: SocialLinks) =>
     Icon: ICON_MAP[label],
   }));
 
-type SocialProps = {
+type Props = {
   links: SocialLinks;
   showTitle?: boolean;
   invert?: boolean;
@@ -39,7 +39,7 @@ const Social = ({
   showTitle = false,
   invert = false,
   animate,
-}: SocialProps) => {
+}: Props) => {
   const icons = mapLinksWithIcons(links);
 
   return (

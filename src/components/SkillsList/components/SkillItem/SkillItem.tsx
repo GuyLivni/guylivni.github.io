@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, SkillTitle, Skill } from './SkillItem.styled';
 
-type SkillItemProps = {
+type Props = {
   title: string;
   description: string[];
 };
 
-const SkillItem = ({ title, description }: SkillItemProps) => {
+const SkillItem = ({ title, description }: Props) => {
   return (
     <Container>
       <SkillTitle>{title}</SkillTitle>

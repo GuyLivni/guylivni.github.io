@@ -1,4 +1,5 @@
 import React from 'react';
+import { HistoryLocation } from '@reach/router';
 import { ThemeProvider } from 'styled-components';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Helmet from 'react-helmet';
@@ -11,14 +12,14 @@ import { GlobalStyles, themes } from '../../styles';
 import { useDarkMode, useSiteData } from '../../hooks';
 import { Content } from './Layout.styled';
 
-type LayoutProps = {
+type Props = {
   children: React.ReactNode;
-  location: { pathname: string };
+  location: HistoryLocation;
 };
 
 const queryClient = new QueryClient();
 
-const Layout = ({ children, location }: LayoutProps) => {
+const Layout = ({ children, location }: Props) => {
   const [isDark, setDark] = useDarkMode();
   const { metadata, footer, header } = useSiteData();
   const { repoUrl, author } = metadata;

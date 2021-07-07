@@ -12,12 +12,12 @@ type Skills = {
   description: string[];
 };
 
-type SkillsListProps = {
+type Props = {
   title: string;
   skills: Skills[];
 };
 
-const SkillsList = ({ title, skills }: SkillsListProps) => (
+const SkillsList = ({ title, skills }: Props) => (
   <Container>
     <TitleContainer>
       <Title>{title}</Title>

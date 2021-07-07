@@ -5,7 +5,7 @@ type ToastOptions = 'Afternoon' | 'Evening' | 'Morning';
 
 type Toasts = { [x in ToastOptions]: string };
 
-type ToastProps = {
+type Props = {
   toasts: Toasts;
 };
 
@@ -21,13 +21,11 @@ const getGreetingByTime = (toasts: Toasts) => {
   }
 };
 
-const Toast = ({ toasts }: ToastProps) => {
-  return (
-    <Container>
-      <Img />
-      <StyledToast>{getGreetingByTime(toasts)}</StyledToast>
-    </Container>
-  );
-};
+const Toast = ({ toasts }: Props) => (
+  <Container>
+    <Img />
+    <StyledToast>{getGreetingByTime(toasts)}</StyledToast>
+  </Container>
+);
 
 export default Toast;

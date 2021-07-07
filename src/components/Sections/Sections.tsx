@@ -11,12 +11,12 @@ type SectionProps = {
   __typename: string;
 };
 
-type SectionsProps = {
+type Props = {
   sections: SectionProps[];
   components: Record<string, React.ElementType>;
 };
 
-const Sections = ({ sections, components, ...rest }: SectionsProps) => {
+const Sections = ({ sections, components, ...rest }: Props) => {
   return (
     <SectionsContainer>
       {sections.map((section, index) => {
