@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { HistoryLocation } from '@reach/router';
 // @ts-ignore
-import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import {
   FaHome,
   FaUserCircle,
@@ -47,9 +46,7 @@ const Menu = ({ location, routes }: MenuProps) => {
 
   return (
     <Nav>
-      <TransitionPortal>
-        <MobileMenu location={location} routes={routesWithIcons} />
-      </TransitionPortal>
+      <MobileMenu location={location} routes={routesWithIcons} />
       <NavLinks>
         {routes.map(({ path, label }) => (
           <Link
