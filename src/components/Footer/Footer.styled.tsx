@@ -1,8 +1,8 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
 const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
+  z-index: -1;
   padding-left: 0;
-  z-index: 1;
   position: relative;
   margin-bottom: 55px;
 
