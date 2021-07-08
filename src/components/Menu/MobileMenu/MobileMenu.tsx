@@ -5,27 +5,23 @@ import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import { Container, Link, StyledIcon } from './MobileMenu.styled';
 import { Routes } from '../../../types/Menu';
 
-type MobileMenuProps = {
+type Props = {
   location: HistoryLocation;
   routes: Routes;
 };
 
-const MobileMenu = ({ location, routes }: MobileMenuProps) => {
-  return (
-    <TransitionPortal>
-      <Container>
-        {routes.map(({ Icon, path }, index) => (
-          <Link paintDrip key={index} to={path} pathname={location.pathname}>
-            <StyledIcon
-              pathname={location.pathname}
-              to={path}
-              component={<Icon />}
-            />
-          </Link>
-        ))}
-      </Container>
-    </TransitionPortal>
-  );
-};
+const MobileMenu = ({ location, routes }: Props) => (
+  <Container>
+    {routes.map(({ Icon, path }, index) => (
+      <Link key={index} to={path} pathname={location.pathname}>
+        <StyledIcon
+          pathname={location.pathname}
+          to={path}
+          component={<Icon />}
+        />
+      </Link>
+    ))}
+  </Container>
+);
 
 export default MobileMenu;

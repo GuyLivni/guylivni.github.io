@@ -30,12 +30,12 @@ const transitionDirections = ['top', 'right', 'left', 'bottom'];
 const getRandomTransitionDirection = () =>
   transitionDirections[Math.floor(Math.random() * transitionDirections.length)];
 
-type MenuProps = {
+type Props = {
   location: HistoryLocation;
   routes: Routes;
 };
 
-const Menu = ({ location, routes }: MenuProps) => {
+const Menu = ({ location, routes }: Props) => {
   const [transitionDirection, setTransitionDirection] = useState(
     getRandomTransitionDirection()
   );
