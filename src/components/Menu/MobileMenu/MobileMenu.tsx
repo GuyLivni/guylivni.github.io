@@ -15,7 +15,7 @@ const MobileMenu = ({ location, routes }: MobileMenuProps) => {
     <TransitionPortal>
       <Container>
         {routes.map(({ Icon, path }, index) => (
-          <Link paintDrip key={index} to={path} pathname={location.pathname}>
+          <Link key={index} to={path} pathname={location.pathname}>
             <StyledIcon
               pathname={location.pathname}
               to={path}
