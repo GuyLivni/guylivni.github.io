@@ -9,8 +9,9 @@ const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
   padding: 10px 0;
   transform: rotate(0deg) scale(1) translateX(0) translateZ(0px)
     perspective(100px);
-  transition: all 0.3s ease;
+  transition: all ${theme.transitions.default};
   cursor: default;
+  background-color: ${theme.colors.p000};
 
   @media ${theme.device.desktop} {
     padding: 0;
