@@ -82,7 +82,7 @@ const darkStyles = ({
   :hover {
     :before,
     :after {
-      transition: all 0.3s ease;
+      transition: all ${theme.transitions.default};
       border: 1px solid ${theme.colors.p400};
     }
     :before {

@@ -17,11 +17,12 @@ const globalStyles = ({ theme }: globalStylesProps) => css`
   }
 
   html,
-  body {
+  body,
+  .tl-edges,
+  .tl-wrapper,
+  #gatsby-focus-wrapper,
+  #___gatsby {
     background-color: ${theme.colors.bodyBackground};
-  }
-
-  body {
     transition: color ${theme.transitions.default},
       background ${theme.transitions.default};
   }
