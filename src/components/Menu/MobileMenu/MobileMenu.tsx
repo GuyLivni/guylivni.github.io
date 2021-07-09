@@ -1,7 +1,5 @@
 import React from 'react';
 import { HistoryLocation } from '@reach/router';
-// @ts-ignore
-import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import { Container, Link, StyledIcon } from './MobileMenu.styled';
 import { Routes } from '../../../types/Menu';
 

@@ -1,12 +1,20 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    'react-app',
-    'plugin:react/recommended',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['@typescript-eslint', 'prettier', 'jsx-a11y', 'react-hooks'],
+  plugins: [
+    '@typescript-eslint',
+    'prettier',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+  ],
   rules: {
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -25,15 +33,16 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es2021: true,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
   parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 2018,
     ecmaFeatures: {
-      impliedStrict: true,
       jsx: true,
-      classes: true,
     },
   },
 };
