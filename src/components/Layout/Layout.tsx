@@ -20,12 +20,10 @@ type Props = {
 const queryClient = new QueryClient();
 
 const Layout = ({ children, location }: Props) => {
-  const [isDark, setDark] = useDarkMode();
+  const [isDark, setDark] = useDarkMode(false);
   const { metadata, footer, header } = useSiteData();
   const { repoUrl, author } = metadata;
   const { darkTheme, mainTheme } = themes;
-
-  if (isDark === undefined) return null;
 
   return (
     <QueryClientProvider client={queryClient}>

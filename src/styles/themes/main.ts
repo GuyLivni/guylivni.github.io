@@ -60,7 +60,7 @@ const misc = {
 };
 
 const transitions = {
-  default: '0.2s ease-out',
+  default: '200ms ease-out',
 };
 
 const fontWeight = {
