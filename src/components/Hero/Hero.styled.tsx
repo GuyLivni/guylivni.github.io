@@ -11,7 +11,6 @@ const containerStyles = ({ theme }: { theme: DefaultTheme }) => css`
     perspective(100px);
   transition: all ${theme.transitions.default};
   cursor: default;
-  background-color: ${theme.colors.p000};
 
   @media ${theme.device.desktop} {
     padding: 0;
