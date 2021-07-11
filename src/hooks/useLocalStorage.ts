@@ -1,48 +1,55 @@
-import { useEffect, useState, SetStateAction, Dispatch } from 'react';
+import {
+  useEffect,
+  useState,
+  SetStateAction,
+  Dispatch,
+  useCallback,
+} from 'react';
 
-const windowExists = typeof window !== 'undefined';
+const windowUndefined = typeof window === 'undefined';
 
 function useLocalStorage<T>(
   key: string,
   initialValue: T | (() => T)
 ): [T, Dispatch<SetStateAction<T>>] {
-  const readValue = () => {
-    if (windowExists) {
-      try {
-        const item = window.localStorage.getItem(key);
-        return item ? JSON.parse(item) : initialValue;
-      } catch (error) {
-        console.log(error);
-        return initialValue;
-      }
+  const readValue = useCallback(() => {
+    if (windowUndefined) {
+      return console.warn(
+        `Tried reading localStorage key “${key}” even though environment is not a client`
+      );
     }
-  };
+
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.warn(`Error reading localStorage key “${key}”:`, error);
+      return initialValue;
+    }
+  }, [initialValue, key]);
 
   const [storedValue, setStoredValue] = useState<T>(readValue);
 
-  useEffect(() => {
-    if (windowExists) {
-      try {
-        window.localStorage.setItem(key, JSON.stringify(storedValue));
-        setStoredValue(storedValue);
-      } catch (error) {
-        console.log(error);
-      }
+  const setValue: Dispatch<SetStateAction<T>> = (value) => {
+    if (windowUndefined) {
+      console.warn(
+        `Tried setting localStorage key “${key}” even though environment is not a client`
+      );
     }
-  }, [key, storedValue]);
+
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+      setStoredValue(value);
+    } catch (error) {
+      console.warn(`Error setting localStorage key “${key}”:`, error);
+    }
+  };
 
   useEffect(() => {
-    if (windowExists) {
-      try {
-        const item = window.localStorage.getItem(key);
-        setStoredValue(item ? JSON.parse(item) : false);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  }, [key, storedValue]);
+    setStoredValue(readValue());
+  }, [readValue]);
 
-  return [storedValue, setStoredValue];
+  return [storedValue, setValue];
 }
 
 export default useLocalStorage;
